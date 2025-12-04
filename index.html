@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hourglass Therapy - Taking Time for You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#fff8f0',
+              100: '#f3ece2',
+              200: '#eee4d7',
+              300: '#e8dbc9',
+            },
+            forest: '#31372f',
+            accent: '#237cad',
+          },
+          fontFamily: {
+            serif: ['DM Serif Display', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fff8f0;
+    }
+    .hero-gradient {
+      background: linear-gradient(to bottom, rgba(232, 219, 201, 0.8), rgba(255, 248, 240, 1));
+    }
+  </style>
+</head>
+<body class="font-sans text-forest antialiased">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="./" class="flex items-center gap-2">
+        <img src="images/logo.png" alt="Hourglass Therapy" class="h-10">
+      </a>
+      <button class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="./" class="hover:text-accent transition-colors">Home</a>
+        <a href="./about.html" class="hover:text-accent transition-colors">About</a>
+        <a href="./services.html" class="hover:text-accent transition-colors">Services</a>
+        <a href="./pricing.html" class="hover:text-accent transition-colors">Pricing</a>
+        <a href="./contact.html" class="hover:text-accent transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient min-h-screen pt-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center py-16 md:py-24">
+        <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-6">Taking Time for You</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto text-forest/80 mb-10">
+          Welcome to Hourglass Therapy – a compassionate, Bristol-based Counselling and Psychotherapy practice.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="./contact.html" class="inline-flex items-center gap-2 bg-forest text-cream-50 px-6 py-3 rounded-full hover:bg-forest/90 transition-colors">
+            Join Us Today
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="./services.html" class="inline-flex items-center gap-2 border border-forest px-6 py-3 rounded-full hover:bg-forest hover:text-cream-50 transition-colors">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid md:grid-cols-2 gap-6 pb-16">
+        <!-- Card 1 - Compassionate Support -->
+        <div class="bg-cream-100 rounded-3xl p-8">
+          <h3 class="font-playfair text-xl font-medium mb-3">Compassionate Support</h3>
+          <p class="text-forest/70">A safe, empathetic space where you're truly heard and supported through life's challenges.</p>
+        </div>
+
+        <!-- Card 2 - Safe Space with Image -->
+        <div class="bg-cream-200 rounded-3xl overflow-hidden">
+          <img src="images/face-to-face.webp" alt="Safe Space" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-lg font-medium mb-2">Safe, Non-Judgmental Space</h3>
+            <p class="text-forest/70 text-sm">Your experiences matter. Share freely, knowing you'll be met with acceptance and understanding.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 - Tailored to Your Needs -->
+        <div class="bg-cream-200 rounded-3xl overflow-hidden">
+          <img src="images/telephone.webp" alt="Tailored Therapy" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-lg font-medium mb-2">Tailored to Your Needs</h3>
+            <p class="text-forest/70 text-sm">Every journey is unique. I work with you to create an approach that fits your goals and preferences.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 - Your Pace -->
+        <div class="bg-cream-200 rounded-3xl overflow-hidden">
+          <img src="images/walk-talk.webp" alt="Your Pace" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-lg font-medium mb-2">Your Pace, Your Way</h3>
+            <p class="text-forest/70 text-sm">There's no rush. Together, we'll move forward at a speed that feels right for you, respecting your autonomy throughout.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-20 px-6 bg-cream-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="rounded-3xl overflow-hidden">
+          <img src="images/caroline.webp" alt="Caroline - Founder of Hourglass Therapy" class="w-full h-auto object-cover">
+        </div>
+        <div>
+          <h2 class="font-serif text-3xl md:text-4xl mb-2">About Me</h2>
+          <h3 class="font-serif text-3xl md:text-4xl italic text-accent mb-6">Caroline</h3>
+          <p class="text-forest/80 mb-8 leading-relaxed">
+            I'm Caroline, founder of Hourglass Therapy. As a qualified, integrative therapist and registered member of the National Counselling & Psychotherapy Society, I work with individuals and couples across the UK – online, by phone, or face-to-face in the Bristol area with nature-based Walk & Talk sessions.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Compassionate
+            </span>
+            <span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Integrative
+            </span>
+            <span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Collaborative
+            </span>
+            <span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Experienced
+            </span>
+            <span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+              <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Grounded
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 px-6 bg-cream-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-accent text-sm font-medium uppercase tracking-wider">Hourglass</span>
+        <h2 class="font-serif text-3xl md:text-5xl mt-2 mb-4">Services</h2>
+        <p class="text-forest/70 max-w-2xl mx-auto">
+          At Hourglass Therapy, we offer flexible and accessible support tailored to your needs – choose the approach that works best for you.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Service Card 1 -->
+        <div class="bg-cream-50 rounded-3xl overflow-hidden">
+          <img src="images/face-to-face.webp" alt="Face-to-Face Counselling" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-xl font-medium mb-3">Face-to-Face Counselling</h3>
+            <p class="text-forest/70 text-sm mb-4">Share, reflect, and grow in a confidential and supportive environment at our calm, welcoming Bristol location.</p>
+            <a href="./pricing.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm hover:bg-accent/90 transition-colors">
+              Book Now
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="bg-cream-50 rounded-3xl overflow-hidden">
+          <img src="images/telephone.webp" alt="Telephone Counselling" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-xl font-medium mb-3">Telephone Counselling</h3>
+            <p class="text-forest/70 text-sm mb-4">Connect by phone for talk therapy from the comfort of your own space – perfect for those who prefer not to be seen onscreen.</p>
+            <a href="./pricing.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm hover:bg-accent/90 transition-colors">
+              Book Now
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="bg-cream-50 rounded-3xl overflow-hidden">
+          <img src="images/walk-talk.webp" alt="Walk & Talk Therapy" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-xl font-medium mb-3">Walk & Talk Therapy</h3>
+            <p class="text-forest/70 text-sm mb-4">Experience the healing benefits of the outdoors. Walking side by side in nature can offer new perspectives and is particularly supportive for those who find traditional settings overwhelming.</p>
+            <a href="./pricing.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm hover:bg-accent/90 transition-colors">
+              Book Now
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service Card 4 -->
+        <div class="bg-cream-50 rounded-3xl overflow-hidden">
+          <img src="images/couples.webp" alt="Couples Counselling" class="w-full h-56 object-cover">
+          <div class="p-6">
+            <h3 class="font-playfair text-xl font-medium mb-3">Couples Counselling</h3>
+            <p class="text-forest/70 text-sm mb-4">Every relationship faces challenges. Together, we'll build communication, understanding, and stronger bonds in a warm, neutral setting.</p>
+            <a href="./pricing.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full text-sm hover:bg-accent/90 transition-colors">
+              Book Now
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-20 px-6 relative">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/newsletter-bg.png');">
+      <div class="absolute inset-0 bg-forest/60"></div>
+    </div>
+    <div class="max-w-3xl mx-auto relative z-10 text-center text-cream-50">
+      <h2 class="font-serif text-2xl md:text-4xl mb-4">Let's take the next step together.</h2>
+      <p class="text-cream-100/80 mb-8">Join our community of yoga & mental health specialists with our monthly newsletter.</p>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="flex-1 px-4 py-3 rounded-full text-forest bg-cream-50 focus:outline-none focus:ring-2 focus:ring-accent"
+        >
+        <button type="submit" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-full hover:bg-accent/90 transition-colors">
+          Subscribe
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </form>
+      <p class="text-cream-100/60 text-sm mt-4 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        No Spam, Only Genuine Updates
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-forest text-cream-50 py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <!-- Top Section -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-cream-50/20 pb-8 mb-8">
+        <div class="mb-6 md:mb-0">
+          <img src="images/logo-light.png" alt="Hourglass Therapy" class="h-12 mb-2">
+          <p class="text-cream-100/70 text-sm">Taking Time for You</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/in/caroline-griffiths-748163a3/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/watch/?v=299161718739268" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/hourglasstherapy/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+        <div>
+          <h4 class="font-medium mb-4">Home Page</h4>
+          <ul class="space-y-2 text-sm text-cream-100/70">
+            <li><a href="./#services" class="hover:text-cream-50 transition-colors">Our Services</a></li>
+            <li><a href="./#about" class="hover:text-cream-50 transition-colors">About</a></li>
+            <li><a href="./#faq" class="hover:text-cream-50 transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium mb-4">About</h4>
+          <ul class="space-y-2 text-sm text-cream-100/70">
+            <li><a href="./about.html" class="hover:text-cream-50 transition-colors">Our Story</a></li>
+            <li><a href="./about.html#mission" class="hover:text-cream-50 transition-colors">Our Mission</a></li>
+            <li><a href="./about.html#values" class="hover:text-cream-50 transition-colors">Our Values</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-cream-100/70">
+            <li><a href="./services.html#face-to-face" class="hover:text-cream-50 transition-colors">Face-to-Face</a></li>
+            <li><a href="./services.html#telephone" class="hover:text-cream-50 transition-colors">Telephone</a></li>
+            <li><a href="./services.html#walk-talk" class="hover:text-cream-50 transition-colors">Walk & Talk</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium mb-4">Other</h4>
+          <ul class="space-y-2 text-sm text-cream-100/70">
+            <li><a href="./contact.html" class="hover:text-cream-50 transition-colors">Contact</a></li>
+            <li><a href="./testimonials.html" class="hover:text-cream-50 transition-colors">Testimonials</a></li>
+            <li><a href="./#faq" class="hover:text-cream-50 transition-colors">FAQ's</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-cream-100/70">
+            <li>
+              <a href="mailto:hello@hourglasstherapy.co.uk" class="flex items-center gap-2 hover:text-cream-50 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                hello@hourglasstherapy.co.uk
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center text-sm text-cream-100/50 pt-8 border-t border-cream-50/20">
+        &copy; 2025 Hourglass Therapy Ltd. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
