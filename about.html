@@ -3,7 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Hourglass Therapy | Bristol Counselling</title>
+  <title>About Caroline - Hourglass Therapy | Bristol Counselling & Psychotherapy</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Meet Caroline, founder of Hourglass Therapy. A qualified integrative therapist and NCPS registered member offering compassionate counselling for anxiety, depression, relationships, and more in Bristol.">
+  <meta name="keywords" content="Caroline Hourglass Therapy, integrative therapist Bristol, NCPS registered therapist, mental health counsellor, anxiety specialist Bristol, depression therapist, qualified psychotherapist UK">
+  <meta name="author" content="Hourglass Therapy">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://hourglasstherapy.co.uk/about.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://hourglasstherapy.co.uk/about.html">
+  <meta property="og:title" content="About Caroline - Hourglass Therapy | Bristol Counselling & Psychotherapy">
+  <meta property="og:description" content="Meet Caroline, founder of Hourglass Therapy. A qualified integrative therapist and NCPS registered member offering compassionate counselling in Bristol.">
+  <meta property="og:image" content="https://hourglasstherapy.co.uk/images/caroline.webp">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="Hourglass Therapy">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://hourglasstherapy.co.uk/about.html">
+  <meta name="twitter:title" content="About Caroline - Hourglass Therapy | Bristol Counselling & Psychotherapy">
+  <meta name="twitter:description" content="Meet Caroline, founder of Hourglass Therapy. A qualified integrative therapist and NCPS registered member.">
+  <meta name="twitter:image" content="https://hourglasstherapy.co.uk/images/caroline.webp">
+
+  <!-- Schema.org Structured Data - Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Caroline",
+    "jobTitle": "Integrative Therapist",
+    "description": "Qualified integrative therapist and registered member of the National Counselling & Psychotherapy Society (NCPS), certified Mental Health First Aider",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "Hourglass Therapy",
+      "url": "https://hourglasstherapy.co.uk"
+    },
+    "knowsAbout": [
+      "Loss and Bereavement",
+      "Anxiety",
+      "Depression",
+      "Relationships",
+      "Self-esteem",
+      "Abuse",
+      "Addictions",
+      "Self-Harm",
+      "Eating Disorders",
+      "Chronic Illness",
+      "Self-improvement"
+    ],
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional Registration",
+        "name": "MNCS Accredited Registrant"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Certification",
+        "name": "Mental Health First Aider (MHFA)"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Certification",
+        "name": "ACTO Level 1 - Online Therapy Standards"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Certification",
+        "name": "Certified Online & Telephone Counsellor"
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Training",
+        "name": "Walk & Talk Therapy Trained"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org Structured Data - BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hourglasstherapy.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://hourglasstherapy.co.uk/about.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Plausible Analytics - Privacy-friendly, GDPR-compliant -->
+  <script defer data-domain="hourglasstherapy.co.uk" src="https://plausible.io/js/script.js"></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +123,11 @@
               100: '#f3ece2',
               200: '#eee4d7',
               300: '#e8dbc9',
+              400: '#F5F0E8',
             },
             forest: '#31372f',
             accent: '#237cad',
+            navy: '#1a2332',
           },
           fontFamily: {
             serif: ['DM Serif Display', 'serif'],
@@ -33,203 +140,362 @@
   </script>
   <style>
     body {
-      background-color: #fff8f0;
+      background-color: #F5F0E8;
+    }
+    /* Accessibility: Skip link styles */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #31372f;
+      color: #fff8f0;
+      padding: 8px 16px;
+      z-index: 100;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+    /* Accessibility: Enhanced focus indicators */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible,
+    [tabindex]:focus-visible {
+      outline: 3px solid #237cad;
+      outline-offset: 2px;
+    }
+    a:focus,
+    button:focus {
+      outline: 3px solid #237cad;
+      outline-offset: 2px;
+    }
+    nav a:focus {
+      outline: 2px solid #237cad;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    /* Dropdown menu styles */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      min-width: 180px;
+      padding: 8px 0;
+      z-index: 100;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 16px;
+      color: #31372f;
+      text-decoration: none;
+    }
+    .dropdown-menu a:hover {
+      background: #F5F0E8;
     }
   </style>
 </head>
 <body class="font-sans text-forest antialiased">
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-cream-50/90 backdrop-blur-sm">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream-100 px-6 py-4" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="./" class="flex items-center gap-2">
-        <img src="images/logo.png" alt="Hourglass Therapy" class="h-10">
+      <!-- Logo -->
+      <a href="./" aria-label="Hourglass Therapy - Home">
+        <img src="images/logo.png" alt="Hourglass Therapy logo" class="h-16">
       </a>
-      <button class="md:hidden">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+      <!-- Mobile menu button -->
+      <button class="md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-      <div class="hidden md:flex items-center gap-8">
-        <a href="./" class="hover:text-accent transition-colors">Home</a>
-        <a href="./about.html" class="text-accent font-medium">About</a>
-        <a href="./services.html" class="hover:text-accent transition-colors">Services</a>
-        <a href="./pricing.html" class="hover:text-accent transition-colors">Pricing</a>
-        <a href="./contact.html" class="hover:text-accent transition-colors">Contact</a>
+
+      <!-- Desktop Navigation -->
+      <div id="mobile-menu" class="hidden md:flex items-center gap-8" role="menubar">
+        <a href="./" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">Home</a>
+        <a href="./about.html" class="text-forest border-b-2 border-forest pb-0.5" role="menuitem" aria-current="page">About</a>
+        <a href="./pricing.html" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">Pricing</a>
+        <a href="./services.html" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">Services</a>
+
+        <!-- Contact Button -->
+        <a href="./contact.html" class="inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-full hover:bg-accent/90 transition-colors font-medium">
+          Contact Us
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-16 px-6 bg-cream-100">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-4">Meet Caroline</h1>
-      </div>
-
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <p class="text-lg text-forest/80 leading-relaxed">
+  <main id="main-content">
+    <!-- Hero Section - Meet Caroline -->
+    <section class="pt-32 pb-16 px-6 bg-cream-400" aria-labelledby="page-heading">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 id="page-heading" class="font-serif text-4xl md:text-5xl lg:text-6xl mb-8">Meet Caroline</h1>
+        <p class="text-lg md:text-xl text-forest/80 leading-relaxed">
           Hello, I'm Caroline, founder of Hourglass Therapy. I am a qualified, integrative therapist, a registered member of the National Counselling & Psychotherapy Society (NCPS), and a certified Mental Health First Aider. I work with individuals and couples across the UK online and by phone, and in-person or outdoors in the Bristol area with nature-based "Walk and Talk" sessions.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Content -->
-  <section class="py-16 px-6 bg-cream-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="rounded-3xl overflow-hidden">
-          <img src="images/caroline.webp" alt="Caroline - Founder of Hourglass Therapy" class="w-full h-auto object-cover">
-        </div>
-        <div class="space-y-6">
-          <p class="text-forest/80 leading-relaxed">
-            As an integrative therapist, I tailor approaches from different therapeutic models to your specific needs. My approach is rooted in empathy, trust, and collaboration – offering a safe, compassionate, non-judgemental space where every aspect of your experience is welcome.
-          </p>
-          <p class="text-forest/80 leading-relaxed">
-            Outside the therapy room, I'm a parent to twins and bring a wealth of real-world experience from roles in the public and private sectors (media, education, police, technology, and law). These experiences enrich my client work, enabling me to relate to a broad spectrum of life challenges.
-          </p>
-          <p class="text-forest/80 leading-relaxed">
-            Your journey is at the heart of what we do. Mutual respect, a genuine therapeutic relationship, and ethical practice underpin every session. I am here to sit alongside you, provide guidance, and offer practical tools as you discover new possibilities – always at your pace.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Two Column About Section -->
+    <section class="py-16 px-6 bg-cream-400" aria-labelledby="about-details-heading">
+      <h2 id="about-details-heading" class="sr-only">About Caroline's Approach</h2>
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Circular Photo -->
+          <div class="flex justify-center md:justify-start">
+            <div class="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden">
+              <img src="images/caroline.webp" alt="Caroline, founder and lead therapist at Hourglass Therapy, in a professional setting" class="w-full h-full object-cover">
+            </div>
+          </div>
 
-  <!-- Professional Associations -->
-  <section id="our-mission" class="py-20 px-6 bg-cream-100">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-accent text-sm font-medium uppercase tracking-wider">Our Mission</span>
-        <h2 class="font-serif text-3xl md:text-4xl mt-2">Professional Associations</h2>
-      </div>
+          <!-- Text Content -->
+          <div class="space-y-6">
+            <p class="text-forest/80 leading-relaxed">
+              As an integrative therapist, I tailor approaches from different therapeutic models to your specific needs. My approach is rooted in empathy, trust, and collaboration - offering a safe, compassionate, non-judgemental space where every aspect of your experience is welcome.
+            </p>
+            <p class="text-forest/80 leading-relaxed">
+              Outside the therapy room, I'm a parent to twins and bring a wealth of real-world experience from roles in the public and private sectors - media, education, police, technology, and law. These experiences enrich my client work, enabling me to relate to a broad spectrum of life challenges.
+            </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- MNCS Accredited -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">MNCS Accredited Registrant</h3>
-          <p class="text-forest/70">As an MNCS Accredited Registrant, I meet the high standards for safety and ethical practice set by the National Counselling and Psychotherapy Society.</p>
-        </div>
-
-        <!-- PSA -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">Professional Standards Authority</h3>
-          <p class="text-forest/70">This independent accreditation provides additional peace of mind, as our practice is held to high professional standards by a government-backed body.</p>
-        </div>
-
-        <!-- ACTO -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">ACTO Level 1</h3>
-          <p class="text-forest/70">As a member of ACTO, the leading organization for online therapy standards, we are committed to providing ethical and effective online counselling.</p>
-        </div>
-
-        <!-- MHFA -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">Mental Health First Aid (MHFA)</h3>
-          <p class="text-forest/70">As a certified Mental Health First Aider, we promote a supportive environment by being trained to recognise and respond to mental health challenges.</p>
-        </div>
-
-        <!-- OTC -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">Online & Telephone Counselling</h3>
-          <p class="text-forest/70">We are a Certified Online & Telephone Counsellor, demonstrating our professional training and competence in delivering services remotely.</p>
-        </div>
-
-        <!-- Walk & Talk -->
-        <div class="bg-cream-50 rounded-3xl p-8">
-          <h3 class="font-playfair text-xl font-medium mb-3">Walk & Talk Therapy Trained</h3>
-          <p class="text-forest/70">As a Walk & Talk trained therapist, we offer you the benefits of combining nature and physical activity with your counselling sessions.</p>
+            <!-- Quote -->
+            <blockquote class="border-l-4 border-accent pl-6 py-2 my-8">
+              <p class="text-forest/90 italic text-lg leading-relaxed">
+                "Your journey is at the heart of what we do. Mutual respect, a genuine therapeutic relationship, and ethical practice underpin every session. I am here to sit alongside you, provide guidance, and offer practical tools as you discover new possibilities - always at your pace."
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience Section -->
-  <section class="py-20 px-6 bg-cream-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-accent text-sm font-medium uppercase tracking-wider">Areas of Focus</span>
-        <h2 class="font-serif text-3xl md:text-4xl mt-2">Experience</h2>
+    <!-- Professional Associations Section -->
+    <section id="our-mission" class="py-20 px-6 bg-cream-400" aria-labelledby="mission-heading">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+          <span class="inline-block bg-accent/10 text-accent text-sm font-medium px-4 py-2 rounded-full mb-4">Our Mission</span>
+          <h2 id="mission-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl">Professional Associations</h2>
+        </div>
+
+        <!-- Credentials Grid - 3 per row -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- MNCS Accredited -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/ncps-logo.webp" alt="National Counselling and Psychotherapy Society - MNCS Accredited Registrant" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">MNCS Accredited Registrant</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">As an MNCS Accredited Registrant, I meet the high standards for safety and ethical practice set by the National Counselling and Psychotherapy Society.</p>
+          </article>
+
+          <!-- PSA -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/psa-logo.webp" alt="Professional Standards Authority Accredited Register" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">Professional Standards Authority</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">This independent accreditation provides additional peace of mind, as our practice is held to high professional standards by a government-backed accredited register.</p>
+          </article>
+
+          <!-- ACTO -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/acto-logo.webp" alt="ACTO - Association for Counselling and Therapy Online" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">ACTO Level 1</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">As a member of ACTO, the leading organization for online therapy standards, we are committed to providing ethical and effective online counselling.</p>
+          </article>
+
+          <!-- MHFA -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/mhfa-logo.webp" alt="Mental Health First Aid England" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">Mental Health First Aider</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">As a certified Mental Health First Aider, we promote a supportive environment by being trained to recognise and respond to mental health challenges.</p>
+          </article>
+
+          <!-- OTC -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/otc-logo.webp" alt="Online and Telephone Counselling Certified" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">Online & Telephone Counselling Certified</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">We are a Certified Online & Telephone Counsellor, demonstrating our professional training and competence in delivering services remotely.</p>
+          </article>
+
+          <!-- Walk & Talk -->
+          <article class="bg-white rounded-2xl p-8 shadow-sm text-center">
+            <div class="h-28 mb-6 flex items-center justify-center">
+              <img src="images/walktalk-logo.webp" alt="Walk and Talk Therapy Trained" class="max-h-full max-w-full object-contain">
+            </div>
+            <h3 class="font-playfair text-xl font-medium mb-3">Walk & Talk Therapy Trained</h3>
+            <p class="text-forest/70 text-sm leading-relaxed">As a Walk & Talk trained therapist, we offer you the benefits of combining nature and physical activity with your counselling sessions.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Loss/Bereavement</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Anxiety</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Depression</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Relationships</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Self-esteem</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Abuse</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Addictions</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Self-Harm</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Eating Disorders</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center col-span-2">Chronic Illness</div>
-        <div class="bg-cream-200 rounded-full px-6 py-3 text-center">Self-improvement</div>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-cream-100" aria-labelledby="experience-heading">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="inline-block bg-accent/10 text-accent text-sm font-medium px-4 py-2 rounded-full mb-4">Experience</span>
+          <h2 id="experience-heading" class="font-serif text-3xl md:text-4xl lg:text-5xl mb-4">Together, We Can Work Through</h2>
+          <p class="text-forest/70 max-w-2xl mx-auto">A wide range of concerns, including:</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Abuse and Trauma</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Anxiety and Panic Disorders</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Chronic Illness (Fibromyalgia, M.E, CFS)</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Depression and Low Mood</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Eating Disorders</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Loss & Bereavement</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Relationship Difficulties</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Self-Esteem & Self-Confidence</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Self-Harm</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Self-Improvement & Personal Growth</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Supporting Neurodivergent Wellbeing</span>
+          </div>
+          <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-3">
+            <svg class="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-forest/80">Supporting Menopause Wellness</span>
+          </div>
+        </div>
+
+        <p class="text-center text-forest/70 mt-8 text-lg">Whatever brings you here, you are not alone. Your experiences matter – and change is possible.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="py-20 px-6 relative">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/newsletter-bg.png');">
-      <div class="absolute inset-0 bg-forest/60"></div>
-    </div>
-    <div class="max-w-3xl mx-auto relative z-10 text-center text-cream-50">
-      <h2 class="font-serif text-2xl md:text-4xl mb-4">Let's take the next step together.</h2>
-      <p class="text-cream-100/80 mb-8">Join our community of yoga & mental health specialists with our monthly newsletter.</p>
-      <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-        <input
-          type="email"
-          placeholder="Email Address"
-          class="flex-1 px-4 py-3 rounded-full text-forest bg-cream-50 focus:outline-none focus:ring-2 focus:ring-accent"
-        >
-        <button type="submit" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-full hover:bg-accent/90 transition-colors">
-          Subscribe
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </form>
-      <p class="text-cream-100/60 text-sm mt-4 flex items-center justify-center gap-2">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-        </svg>
-        No Spam, Only Genuine Updates
-      </p>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="bg-forest text-cream-50 py-16 px-6">
+  <footer class="bg-navy text-cream-50 py-16 px-6" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <!-- Top Section -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-cream-50/20 pb-8 mb-8">
         <div class="mb-6 md:mb-0">
-          <img src="images/logo-light.png" alt="Hourglass Therapy" class="h-12 mb-2">
-          <p class="text-cream-100/70 text-sm">Taking Time for You</p>
+          <!-- Logo for Footer -->
+          <a href="./" aria-label="Hourglass Therapy - Home">
+            <img src="images/logo-light.png" alt="Hourglass Therapy logo" class="h-14">
+          </a>
+          <p class="text-cream-100/70 text-sm mt-2">Taking Time for You</p>
         </div>
-        <div class="flex gap-4">
-          <a href="https://www.linkedin.com/in/caroline-griffiths-748163a3/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <nav class="flex gap-4" aria-label="Social media links">
+          <a href="https://www.linkedin.com/in/caroline-griffiths-748163a3/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on LinkedIn (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </a>
-          <a href="https://www.facebook.com/watch/?v=299161718739268" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <a href="https://www.facebook.com/watch/?v=299161718739268" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on Facebook (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
-          <a href="https://www.instagram.com/hourglasstherapy/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <a href="https://www.instagram.com/hourglasstherapy/" class="w-10 h-10 bg-cream-50/10 rounded-full flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on Instagram (opens in new tab)" target="_blank" rel="noopener noreferrer">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </a>
-        </div>
+        </nav>
       </div>
 
       <!-- Links Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+      <nav class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8" aria-label="Footer navigation">
         <div>
-          <h4 class="font-medium mb-4">Home Page</h4>
+          <h3 class="font-medium mb-4">Home Page</h3>
           <ul class="space-y-2 text-sm text-cream-100/70">
             <li><a href="./#services" class="hover:text-cream-50 transition-colors">Our Services</a></li>
             <li><a href="./#about" class="hover:text-cream-50 transition-colors">About</a></li>
@@ -237,7 +503,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-medium mb-4">About</h4>
+          <h3 class="font-medium mb-4">About</h3>
           <ul class="space-y-2 text-sm text-cream-100/70">
             <li><a href="./about.html" class="hover:text-cream-50 transition-colors">Our Story</a></li>
             <li><a href="./about.html#our-mission" class="hover:text-cream-50 transition-colors">Our Mission</a></li>
@@ -245,7 +511,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-medium mb-4">Services</h4>
+          <h3 class="font-medium mb-4">Services</h3>
           <ul class="space-y-2 text-sm text-cream-100/70">
             <li><a href="./services.html#face-to-face" class="hover:text-cream-50 transition-colors">Face-to-Face</a></li>
             <li><a href="./services.html#telephone" class="hover:text-cream-50 transition-colors">Telephone</a></li>
@@ -253,19 +519,19 @@
           </ul>
         </div>
         <div>
-          <h4 class="font-medium mb-4">Other</h4>
+          <h3 class="font-medium mb-4">Specialisms</h3>
           <ul class="space-y-2 text-sm text-cream-100/70">
-            <li><a href="./contact.html" class="hover:text-cream-50 transition-colors">Contact</a></li>
-            <li><a href="./testimonials.html" class="hover:text-cream-50 transition-colors">Testimonials</a></li>
-            <li><a href="./#faq" class="hover:text-cream-50 transition-colors">FAQ's</a></li>
+            <li><a href="./supervision.html" class="hover:text-cream-50 transition-colors">Supervision</a></li>
+            <li><a href="./hypnotherapy.html" class="hover:text-cream-50 transition-colors">Hypnotherapy</a></li>
+            <li><a href="./eating-disorders.html" class="hover:text-cream-50 transition-colors">Eating Disorders</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-medium mb-4">Contact</h4>
+          <h3 class="font-medium mb-4">Contact</h3>
           <ul class="space-y-3 text-sm text-cream-100/70">
             <li>
-              <a href="mailto:hello@hourglasstherapy.co.uk" class="flex items-center gap-2 hover:text-cream-50 transition-colors">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <a href="mailto:hello@hourglasstherapy.co.uk" class="flex items-center gap-2 hover:text-cream-50 transition-colors" aria-label="Email us at hello@hourglasstherapy.co.uk">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
                 hello@hourglasstherapy.co.uk
@@ -273,13 +539,17 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
 
       <!-- Copyright -->
       <div class="text-center text-sm text-cream-100/50 pt-8 border-t border-cream-50/20">
-        &copy; 2025 Hourglass Therapy Ltd. All rights reserved.
+        <p class="mb-2">Hourglass Therapy | Caroline – Counselling & Psychotherapy in Bristol, Nationwide Online</p>
+        <p class="mb-2">Registered with the National Counselling & Psychotherapy Society</p>
+        <p>&copy; 2025 Hourglass Therapy Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <!-- Analytics Event Tracking -->
 </body>
 </html>
