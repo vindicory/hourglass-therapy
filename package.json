@@ -1,10 +1,15 @@
 {
   "name": "hourglass-therapy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Hourglass Therapy - Bristol Counselling & Psychotherapy",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "repository": {
     "type": "git",
@@ -18,6 +23,7 @@
   },
   "homepage": "https://github.com/vindicory/hourglass-therapy#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "nodemailer": "^7.0.12"
   }
 }

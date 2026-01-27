@@ -1,0 +1,52 @@
+# DigitalOcean App Platform Configuration
+# Deploy with: doctl apps create --spec app.yaml
+# Update with: doctl apps update APP_ID --spec app.yaml
+
+name: hourglass-therapy
+region: lon1
+
+# Environment variables
+envs:
+  - key: NODE_ENV
+    value: production
+  - key: SMTP_HOST
+    scope: RUN_TIME
+    type: SECRET
+  - key: SMTP_PORT
+    scope: RUN_TIME
+    value: "587"
+  - key: SMTP_USER
+    scope: RUN_TIME
+    type: SECRET
+  - key: SMTP_PASS
+    scope: RUN_TIME
+    type: SECRET
+  - key: CONTACT_EMAIL
+    scope: RUN_TIME
+    value: hello@hourglasstherapy.co.uk
+
+services:
+  - name: web
+    github:
+      repo: vindicory/hourglass-therapy
+      branch: main
+      deploy_on_push: true
+    source_dir: /
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    http_port: 8500
+    routes:
+      - path: /
+    health_check:
+      http_path: /
+      initial_delay_seconds: 10
+      period_seconds: 10
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
+    run_command: node server.js
+
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
