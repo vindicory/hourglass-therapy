@@ -289,9 +289,13 @@
   <main id="main-content">
     <!-- Hero Section -->
     <section class="relative min-h-[85vh] flex items-center justify-center pt-20" aria-labelledby="hero-heading">
-      <!-- Background Image -->
+      <!-- Background Video -->
       <div class="absolute inset-0">
-        <img src="images/hero-bg.png" alt="" class="w-full h-full object-cover" aria-hidden="true">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover" aria-hidden="true">
+          <source src="hourglass.mp4" type="video/mp4">
+          <!-- Fallback image for browsers that don't support video -->
+          <img src="images/hero-bg.png" alt="" class="w-full h-full object-cover">
+        </video>
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -380,7 +384,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="py-20 px-6 bg-cream-50" aria-labelledby="about-heading">
+    <section id="about" class="py-20 px-6 bg-cream-50" aria-labelledby="about-heading">
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <!-- Photo -->
@@ -435,7 +439,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-20 px-6 bg-cream-100" aria-labelledby="services-heading">
+    <section id="services" class="py-20 px-6 bg-cream-100" aria-labelledby="services-heading">
       <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-12">
@@ -449,15 +453,15 @@
         <!-- Services Grid - Row 1 -->
         <div class="grid md:grid-cols-3 gap-6 mb-6">
           <!-- Service Card 1 - Face to Face -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/face-to-face.webp" alt="Comfortable therapy room setting for face-to-face counselling sessions" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Face-to-Face Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Share, reflect, and grow in a confidential and supportive environment at our calm, welcoming Bristol location.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book face-to-face counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book face-to-face counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -467,15 +471,15 @@
           </article>
 
           <!-- Service Card 2 - Telephone -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/telephone.webp" alt="Person comfortably engaged in telephone counselling from home" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Telephone Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Connect by phone for talk therapy from the comfort of your own space - perfect for those who prefer not to be seen onscreen.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book telephone counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book telephone counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -485,15 +489,15 @@
           </article>
 
           <!-- Service Card 3 - Online/Video -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/couples.webp" alt="Online video counselling session" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Online/Video Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Meet virtually via Zoom or Skype. Flexible and accessible for busy lifestyles, enabling you to work on your goals wherever you are.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book online video counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book online video counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -506,15 +510,15 @@
         <!-- Services Grid - Row 2 -->
         <div class="grid md:grid-cols-3 gap-6">
           <!-- Service Card 4 - Walk & Talk -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/walk-talk.webp" alt="Scenic outdoor path in Bristol area used for walk and talk therapy" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Walk & Talk Therapy</h3>
               <p class="text-forest/70 text-sm mb-4">Experience the healing benefits of the outdoors. Walking side by side in nature can offer new perspectives and is particularly supportive for those who find traditional settings overwhelming.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book walk and talk therapy now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book walk and talk therapy now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -524,15 +528,15 @@
           </article>
 
           <!-- Service Card 5 - Couples -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/couples.webp" alt="Welcoming space for couples counselling sessions" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Couples Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Every relationship faces challenges. Together, we'll build communication, understanding, and stronger bonds in a warm, neutral setting.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book couples counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book couples counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -542,15 +546,15 @@
           </article>
 
           <!-- Service Card 6 - Supervision -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm">
+          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-64">
               <img src="images/face-to-face.webp" alt="Professional supervision session" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Supervision</h3>
               <p class="text-forest/70 text-sm mb-4">Provide ethical, reflective support to your practice. I offer confidential supervision for trainee and qualified counsellors, tailored to enhance your skills, wellbeing, and professional growth.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors" aria-label="Book supervision now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book supervision now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
