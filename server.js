@@ -3,7 +3,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = 8500;
+const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';
 
 // Middleware to parse JSON and URL-encoded data
