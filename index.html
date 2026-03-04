@@ -164,29 +164,26 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             cream: {
-              50: '#FAF7F2',
+              50: '#fff8f0',
               100: '#F5F0E8',
-              200: '#EDE5D8',
-              300: '#E5DACA',
+              200: '#eee4d7',
+              300: '#e8dbc9',
             },
-            navy: {
-              600: '#2B5A8A',
-              700: '#1E4A75',
-              800: '#1E3A5F',
-              900: '#1A2F4A',
-            },
+            navy: '#1a1f2e',
             forest: '#31372f',
+            accent: '#237cad',
           },
           fontFamily: {
-            serif: ['Cormorant Garamond', 'serif'],
+            serif: ['DM Serif Display', 'serif'],
             sans: ['Inter', 'sans-serif'],
+            playfair: ['Playfair Display', 'serif'],
           },
         },
       },
@@ -306,7 +303,7 @@
           Welcome to Hourglass Therapy - a compassionate, Bristol-based Counselling and Psychotherapy practice.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-navy-600 text-white px-8 py-3.5 rounded-md hover:bg-navy-700 transition-colors text-sm font-medium">
+          <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-3.5 rounded-md hover:bg-accent/90 transition-colors text-sm font-medium">
             Join Us Today
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -326,10 +323,10 @@
     <section class="py-24 px-6 bg-cream-50 relative overflow-hidden" aria-labelledby="welcome-heading">
       <!-- Decorative background elements -->
       <div class="absolute inset-0 opacity-5">
-        <svg class="absolute top-10 right-10 w-64 h-64 text-navy-600" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
+        <svg class="absolute top-10 right-10 w-64 h-64 text-accent" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
           <circle cx="100" cy="100" r="80" />
         </svg>
-        <svg class="absolute bottom-10 left-10 w-48 h-48 text-navy-600" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
+        <svg class="absolute bottom-10 left-10 w-48 h-48 text-accent" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
           <circle cx="100" cy="100" r="60" />
         </svg>
       </div>
@@ -339,7 +336,7 @@
           <!-- Main content -->
           <div class="space-y-6">
             <div class="inline-block">
-              <span class="text-sm font-medium text-navy-600 bg-cream-200 px-4 py-1.5 rounded-full">Welcome</span>
+              <span class="text-sm font-medium text-accent bg-cream-200 px-4 py-1.5 rounded-full">Welcome</span>
             </div>
 
             <h2 id="welcome-heading" class="font-serif text-3xl md:text-4xl text-forest mb-6">
@@ -362,7 +359,7 @@
             </div>
 
             <div class="pt-4">
-              <a href="./contact.html" class="inline-flex items-center gap-2 bg-navy-600 text-white px-6 py-3 rounded-md hover:bg-navy-700 transition-colors font-medium">
+              <a href="./contact.html" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-md hover:bg-accent/90 transition-colors font-medium">
                 Get Started Today
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -379,10 +376,10 @@
       <h2 id="features-heading" class="sr-only">Our Approach</h2>
 
       <!-- Decorative leaf SVGs -->
-      <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-auto text-navy-600/10" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
+      <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-auto text-accent/10" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
         <path d="M10 100 Q30 60 50 100 Q30 140 10 100 M20 80 Q35 50 60 80 Q35 110 20 80 M20 120 Q35 90 60 120 Q35 150 20 120"/>
       </svg>
-      <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-auto text-navy-600/10 scale-x-[-1]" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
+      <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-auto text-accent/10 scale-x-[-1]" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
         <path d="M10 100 Q30 60 50 100 Q30 140 10 100 M20 80 Q35 50 60 80 Q35 110 20 80 M20 120 Q35 90 60 120 Q35 150 20 120"/>
       </svg>
 
@@ -391,7 +388,7 @@
           <!-- Feature 1 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-navy-600/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
               </svg>
             </div>
@@ -402,7 +399,7 @@
           <!-- Feature 2 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-navy-600/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
@@ -413,7 +410,7 @@
           <!-- Feature 3 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-navy-600/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
               </svg>
             </div>
@@ -424,7 +421,7 @@
           <!-- Feature 4 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-navy-600/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
@@ -448,7 +445,7 @@
 
           <!-- Content -->
           <div>
-            <p class="text-sm text-navy-600 font-medium mb-2">About Me</p>
+            <p class="text-sm text-accent font-medium mb-2">About Me</p>
             <h2 id="about-heading" class="font-serif text-4xl md:text-5xl mb-6">Caroline</h2>
             <p class="text-forest/80 mb-4 leading-relaxed">
               Hi, I'm Caroline, founder of Hourglass Therapy. I am a fully qualified counsellor and supervisor. I am a member of the National Counselling & Psychotherapy Society (NCPS), the National Hypnotherapy Society and a Mental Health First Aider. I provide online and telephone counselling throughout the UK as well as in-person and walk and talk therapy in the Bristol area.
@@ -458,31 +455,31 @@
             </p>
             <ul class="flex flex-wrap gap-3" aria-label="Caroline's therapeutic qualities">
               <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
-                <svg class="w-4 h-4 text-navy-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Compassionate
               </li>
               <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
-                <svg class="w-4 h-4 text-navy-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Integrative
               </li>
               <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
-                <svg class="w-4 h-4 text-navy-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Collaborative
               </li>
               <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
-                <svg class="w-4 h-4 text-navy-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Experienced
               </li>
               <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
-                <svg class="w-4 h-4 text-navy-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Grounded
@@ -515,7 +512,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Face-to-Face Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Share, reflect, and grow in a confidential and supportive environment at our calm, welcoming Bristol location.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book face-to-face counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book face-to-face counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -533,7 +530,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Telephone Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Connect by phone for talk therapy from the comfort of your own space - perfect for those who prefer not to be seen onscreen.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book telephone counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book telephone counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -551,7 +548,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Online/Video Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Meet virtually via Zoom or Skype. Flexible and accessible for busy lifestyles, enabling you to work on your goals wherever you are.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book online video counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book online video counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -572,7 +569,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Walk & Talk Therapy</h3>
               <p class="text-forest/70 text-sm mb-4">Experience the healing benefits of the outdoors. Walking side by side in nature can offer new perspectives and is particularly supportive for those who find traditional settings overwhelming.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book walk and talk therapy now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book walk and talk therapy now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -590,7 +587,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Couples Counselling</h3>
               <p class="text-forest/70 text-sm mb-4">Every relationship faces challenges. Together, we'll build communication, understanding, and stronger bonds in a warm, neutral setting.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book couples counselling now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book couples counselling now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -608,7 +605,7 @@
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Supervision</h3>
               <p class="text-forest/70 text-sm mb-4">Provide ethical, reflective support to your practice. I offer confidential supervision for trainee and qualified counsellors, tailored to enhance your skills, wellbeing, and professional growth.</p>
-              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-navy-600 text-white px-5 py-3 rounded-md text-sm hover:bg-navy-700 transition-colors mt-auto" aria-label="Book supervision now">
+              <a href="./pricing.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-5 py-3 rounded-md text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book supervision now">
                 Book Now
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -633,11 +630,11 @@
           <!-- Left Content -->
           <div class="text-white">
             <h2 id="newsletter-heading" class="font-serif text-3xl md:text-4xl mb-4 italic">Let's take the next step together.</h2>
-            <p class="text-white/80">Join our community of yoga & mental health specialists with our monthly newsletter.</p>
+            <p class="text-white/80">Stay connected with our monthly newsletter for wellbeing tips and therapy insights.</p>
           </div>
 
           <!-- Right Form -->
-          <div class="bg-navy-600 p-8 rounded-lg">
+          <div class="bg-accent p-8 rounded-lg">
             <form class="space-y-4" aria-label="Newsletter signup form">
               <div>
                 <label for="newsletter-email" class="sr-only">Email Address</label>
@@ -649,7 +646,7 @@
                   required
                   aria-required="true"
                   autocomplete="email"
-                  class="w-full px-4 py-3 rounded-md text-forest bg-white focus:outline-none focus:ring-2 focus:ring-navy-600"
+                  class="w-full px-4 py-3 rounded-md text-forest bg-white focus:outline-none focus:ring-2 focus:ring-accent"
                 >
               </div>
               <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-cream-100 text-forest px-6 py-3 rounded-md hover:bg-cream-200 transition-colors font-medium">
@@ -659,7 +656,7 @@
                 </svg>
               </button>
               <label class="flex items-center gap-2 text-white/80 text-sm cursor-pointer">
-                <input type="checkbox" class="w-4 h-4 rounded border-white/30 bg-transparent text-navy-600 focus:ring-navy-600">
+                <input type="checkbox" class="w-4 h-4 rounded border-white/30 bg-transparent text-accent focus:ring-accent">
                 <span>No Spam, Only Genuine Updates</span>
               </label>
             </form>
@@ -670,7 +667,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-navy-800 text-white py-16 px-6" role="contentinfo">
+  <footer class="bg-navy text-white py-16 px-6" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <!-- Top Section -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-8 mb-8">
@@ -752,7 +749,7 @@
       <div class="text-center text-sm text-white/40 pt-8 border-t border-white/10">
         <p class="mb-2">Hourglass Therapy | Caroline – Counselling & Psychotherapy in Bristol, Nationwide Online</p>
         <p class="mb-2">Registered with the National Counselling & Psychotherapy Society</p>
-        <p>&copy; 2025 Hourglass Therapy Ltd. All rights reserved.</p>
+        <p>&copy; 2026 Hourglass Therapy Ltd. All rights reserved.</p>
       </div>
     </div>
   </footer>

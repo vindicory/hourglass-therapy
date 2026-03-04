@@ -3,7 +3,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 18080;
 const HOST = '0.0.0.0';
 
 // Middleware to parse JSON and URL-encoded data
@@ -132,5 +132,5 @@ Taking Time for You
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`Server running at http://100.95.191.86:${PORT}/`);
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
