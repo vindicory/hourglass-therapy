@@ -140,7 +140,7 @@ hourglass-therapy/
 ### 2. Hero Section
 - Large serif heading "Taking Time for You"
 - Subtitle describing the practice
-- Two CTAs: "Join Us Today" (primary) and "Book Now" (secondary)
+- No buttons (hero CTAs removed 2026-08-27)
 - Background video (hourglass with blue sand) with dark overlay
 
 ### 3. Feature Cards
