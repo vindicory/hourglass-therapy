@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Always start new page loads at the top: no scroll restoration on reload/back
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', function () { window.scrollTo(0, 0); });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hourglass Therapy offers compassionate counselling and psychotherapy services in Bristol. Face-to-face, telephone, online, and walk and talk therapy options available.">
@@ -138,6 +143,15 @@
           },
           "price": "85.00",
           "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hypnotherapy",
+            "description": "Hypnotherapy for anxiety, phobias, confidence, sleep and smoking cessation"
+          },
+          "priceCurrency": "GBP"
         }
       ]
     }
@@ -170,15 +184,36 @@
       theme: {
         extend: {
           colors: {
-            cream: {
-              50: '#fff8f0',
-              100: '#F5F0E8',
-              200: '#eee4d7',
-              300: '#e8dbc9',
+            // Hourglass brand palette (see claude.md). 700-900 are derived deeper slates.
+            brand: {
+              50: '#f7f7f7',
+              100: '#eef7fd',
+              200: '#d3e5f2',
+              300: '#c0ddf4',
+              400: '#94b4c8',
+              500: '#85a8bd',
+              600: '#5a8298',
+              700: '#4a6b7d',
+              800: '#2f4a58',
+              900: '#21353f',
             },
-            navy: '#1a1f2e',
-            forest: '#31372f',
-            accent: '#237cad',
+            sand: {
+              50: '#f5f5f0',
+              100: '#ede7d6',
+            },
+            mist: {
+              100: '#e7edeb',
+              200: '#b6c2c3',
+            },
+            'brand-sky': {
+              100: '#badff8',
+              200: '#b6d9f6',
+            },
+            slate: {
+              muted: '#63808d',
+              deep: '#5a8399',
+            },
+            accent: '#5a8298',
           },
           fontFamily: {
             serif: ['DM Serif Display', 'serif'],
@@ -191,15 +226,15 @@
   </script>
   <style>
     body {
-      background-color: #F5F0E8;
+      background-color: #d3e5f2;
     }
     /* Accessibility: Skip link styles */
     .skip-link {
       position: absolute;
       top: -40px;
       left: 0;
-      background: #31372f;
-      color: #fff8f0;
+      background: #2f4a58;
+      color: #f5f5f0;
       padding: 8px 16px;
       z-index: 100;
       text-decoration: none;
@@ -215,16 +250,16 @@
     textarea:focus-visible,
     select:focus-visible,
     [tabindex]:focus-visible {
-      outline: 3px solid #237cad;
+      outline: 3px solid #5a8298;
       outline-offset: 2px;
     }
     a:focus,
     button:focus {
-      outline: 3px solid #237cad;
+      outline: 3px solid #5a8298;
       outline-offset: 2px;
     }
     nav a:focus {
-      outline: 2px solid #237cad;
+      outline: 2px solid #5a8298;
       outline-offset: 4px;
       border-radius: 4px;
     }
@@ -256,12 +291,12 @@
     }
   </style>
 </head>
-<body class="font-sans text-forest antialiased">
+<body class="font-sans text-brand-800 antialiased">
   <!-- Skip Navigation Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream-100 px-6 py-4" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-200 px-6 py-4" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Logo -->
       <a href="./" aria-label="Hourglass Therapy - Home">
@@ -277,22 +312,23 @@
 
       <!-- Desktop Navigation -->
       <div id="mobile-menu" class="hidden md:flex items-center gap-8" role="menubar">
-        <a href="./" class="text-forest border-b-2 border-forest pb-0.5" role="menuitem" aria-current="page">Home</a>
-        <a href="./about.html" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">About</a>
-        <a href="./pricing.html" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">Pricing</a>
+        <a href="./" class="text-brand-800 border-b-2 border-brand-800 pb-0.5" role="menuitem" aria-current="page">Home</a>
+        <a href="./about.html" class="text-brand-800/70 hover:text-brand-800 transition-colors" role="menuitem">About</a>
+        <a href="./pricing.html" class="text-brand-800/70 hover:text-brand-800 transition-colors" role="menuitem">Pricing</a>
         <div class="relative dropdown" role="menuitem">
-          <a href="./services.html" class="text-forest/70 hover:text-forest transition-colors inline-flex items-center gap-1">
+          <a href="./services.html" class="text-brand-800/70 hover:text-brand-800 transition-colors inline-flex items-center gap-1">
             Services
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu hidden absolute top-full left-0 pt-2">
-            <div class="bg-cream-50 rounded-lg shadow-lg border border-cream-200 py-2 min-w-[160px] sm:min-w-[200px]">
-              <a href="./counselling.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Counselling</a>
-              <a href="./hypnotherapy.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Hypnotherapy</a>
-              <a href="./eating-disorders.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Eating Disorders</a>
-              <a href="./supervision.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Supervision</a>
+            <div class="bg-brand-100 rounded-lg shadow-lg border border-brand-300 py-2 min-w-[160px] sm:min-w-[200px]">
+              <a href="./counselling.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Counselling</a>
+              <a href="./couples-counselling.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Couples Counselling</a>
+              <a href="./hypnotherapy.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Hypnotherapy</a>
+              <a href="./eating-disorders.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Eating Disorders</a>
+              <a href="./supervision.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Supervision</a>
             </div>
           </div>
         </div>
@@ -345,13 +381,13 @@
     </section>
 
     <!-- Welcome Section -->
-    <section class="py-20 px-6 bg-cream-50 relative overflow-hidden" aria-labelledby="welcome-heading">
+    <section class="py-20 px-6 bg-brand-100 relative overflow-hidden" aria-labelledby="welcome-heading">
       <!-- Decorative background elements -->
       <div class="absolute inset-0 opacity-5">
-        <svg class="absolute top-10 right-10 w-64 h-64 text-accent" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
+        <svg class="absolute top-10 right-10 w-64 h-64 text-brand-700" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
           <circle cx="100" cy="100" r="80" />
         </svg>
-        <svg class="absolute bottom-10 left-10 w-48 h-48 text-accent" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
+        <svg class="absolute bottom-10 left-10 w-48 h-48 text-brand-700" viewBox="0 0 200 200" fill="currentColor" aria-hidden="true">
           <circle cx="100" cy="100" r="60" />
         </svg>
       </div>
@@ -361,15 +397,15 @@
           <!-- Main content -->
           <div class="space-y-6">
             <div class="inline-block">
-              <span class="text-sm font-medium text-accent bg-accent/10 px-4 py-1.5 rounded-lg">Welcome</span>
+              <span class="text-sm font-medium text-brand-700 bg-accent/10 px-4 py-1.5 rounded-lg">Welcome</span>
             </div>
 
-            <h2 id="welcome-heading" class="font-serif text-3xl md:text-4xl text-forest mb-6">
+            <h2 id="welcome-heading" class="font-serif text-3xl md:text-4xl text-brand-800 mb-6">
               Your Journey to Wellbeing Starts Here
             </h2>
 
-            <div class="space-y-5 text-forest/80 leading-relaxed max-w-4xl">
-              <p class="text-lg font-medium text-forest">
+            <div class="space-y-5 text-brand-800/80 leading-relaxed max-w-4xl">
+              <p class="text-lg font-medium text-brand-800">
                 Welcome to Hourglass Therapy – a compassionate, Bristol-based Counselling and Psychotherapy practice. We offer a range of therapeutic approaches, including face-to-face, telephone, online, and Walk & Talk sessions, allowing support to fit seamlessly into your life.
               </p>
               <p>
@@ -397,14 +433,14 @@
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 px-6 bg-cream-100 relative overflow-hidden" aria-labelledby="features-heading">
+    <section class="py-20 px-6 bg-brand-200 relative overflow-hidden" aria-labelledby="features-heading">
       <h2 id="features-heading" class="sr-only">Our Approach</h2>
 
       <!-- Decorative leaf SVGs -->
-      <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-auto text-accent/10" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
+      <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-32 h-auto text-brand-700/10" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
         <path d="M10 100 Q30 60 50 100 Q30 140 10 100 M20 80 Q35 50 60 80 Q35 110 20 80 M20 120 Q35 90 60 120 Q35 150 20 120"/>
       </svg>
-      <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-auto text-accent/10 scale-x-[-1]" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
+      <svg class="absolute right-0 top-1/2 -translate-y-1/2 w-32 h-auto text-brand-700/10 scale-x-[-1]" viewBox="0 0 100 200" fill="currentColor" aria-hidden="true">
         <path d="M10 100 Q30 60 50 100 Q30 140 10 100 M20 80 Q35 50 60 80 Q35 110 20 80 M20 120 Q35 90 60 120 Q35 150 20 120"/>
       </svg>
 
@@ -413,98 +449,98 @@
           <!-- Feature 1 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-brand-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
               </svg>
             </div>
             <h3 class="font-serif text-lg mb-2">Compassionate Support</h3>
-            <p class="text-sm text-forest/70">A safe, empathetic space where you're truly heard and supported through life's challenges.</p>
+            <p class="text-sm text-brand-800/70">A safe, empathetic space where you're truly heard and supported through life's challenges.</p>
           </article>
 
           <!-- Feature 2 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-brand-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
               </svg>
             </div>
             <h3 class="font-serif text-lg mb-2">Safe, Non-Judgmental Space</h3>
-            <p class="text-sm text-forest/70">Your experiences matter. Share freely, knowing you'll be met with acceptance and understanding.</p>
+            <p class="text-sm text-brand-800/70">Your experiences matter. Share freely, knowing you'll be met with acceptance and understanding.</p>
           </article>
 
           <!-- Feature 3 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-brand-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
               </svg>
             </div>
             <h3 class="font-serif text-lg mb-2">Tailored to Your Needs</h3>
-            <p class="text-sm text-forest/70">Every journey is unique. I work with you to create an approach that fits your goals and preferences.</p>
+            <p class="text-sm text-brand-800/70">Every journey is unique. I work with you to create an approach that fits your goals and preferences.</p>
           </article>
 
           <!-- Feature 4 -->
           <article class="text-center">
             <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-10 h-10 text-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg class="w-10 h-10 text-brand-700/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
             <h3 class="font-serif text-lg mb-2">Your Pace, Your Way</h3>
-            <p class="text-sm text-forest/70">There's no rush. Together, we'll move forward at a speed that feels right for you, respecting your autonomy throughout.</p>
+            <p class="text-sm text-brand-800/70">There's no rush. Together, we'll move forward at a speed that feels right for you, respecting your autonomy throughout.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-cream-50" aria-labelledby="about-heading">
+    <section id="about" class="py-20 px-6 bg-brand-100" aria-labelledby="about-heading">
       <div class="max-w-6xl mx-auto">
         <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
           <!-- Photo -->
           <div class="flex justify-center">
-            <div class="w-72 h-72 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-cream-200 shadow-lg">
+            <div class="w-72 h-72 md:w-80 md:h-80 rounded-lg overflow-hidden border-4 border-brand-300 shadow-lg">
               <img src="images/caroline.webp" alt="Caroline, founder and lead therapist at Hourglass Therapy, smiling warmly" class="w-full h-full object-cover" loading="lazy">
             </div>
           </div>
 
           <!-- Content -->
           <div>
-            <span class="inline-block bg-accent/10 text-accent text-sm font-medium px-4 py-2 rounded-lg mb-4">About Me</span>
+            <span class="inline-block bg-accent/10 text-brand-700 text-sm font-medium px-4 py-2 rounded-lg mb-4">About Me</span>
             <h2 id="about-heading" class="font-serif text-3xl md:text-5xl mb-6">Caroline</h2>
-            <p class="text-forest/80 mb-4 leading-relaxed">
+            <p class="text-brand-800/80 mb-4 leading-relaxed">
               Hi, I'm Caroline, founder of Hourglass Therapy. I am a fully qualified counsellor and supervisor. I am a member of the National Counselling & Psychotherapy Society (NCPS), the National Hypnotherapy Society and a Mental Health First Aider. I provide online and telephone counselling throughout the UK as well as in-person and walk and talk therapy in the Bristol area.
             </p>
-            <p class="text-forest/80 mb-8 leading-relaxed">
+            <p class="text-brand-800/80 mb-8 leading-relaxed">
               I am an integrative therapist, which means I adapt my skills and knowledge to suit your individual needs. I offer a safe, compassionate, non-judgemental space where we can work together to help you move past the issues that stand in the way of your true potential.
             </p>
             <ul class="flex flex-wrap gap-3" aria-label="Caroline's therapeutic qualities">
-              <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-lg text-sm">
-                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <li class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-lg text-sm">
+                <svg class="w-4 h-4 text-brand-700" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Compassionate
               </li>
-              <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-lg text-sm">
-                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <li class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-lg text-sm">
+                <svg class="w-4 h-4 text-brand-700" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Integrative
               </li>
-              <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-lg text-sm">
-                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <li class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-lg text-sm">
+                <svg class="w-4 h-4 text-brand-700" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Collaborative
               </li>
-              <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-lg text-sm">
-                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <li class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-lg text-sm">
+                <svg class="w-4 h-4 text-brand-700" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Experienced
               </li>
-              <li class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-lg text-sm">
-                <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <li class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-lg text-sm">
+                <svg class="w-4 h-4 text-brand-700" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
                 Grounded
@@ -516,12 +552,12 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 px-6 bg-cream-100" aria-labelledby="services-heading">
+    <section id="services" class="py-20 px-6 bg-brand-200" aria-labelledby="services-heading">
       <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-12">
           <h2 id="services-heading" class="font-serif text-2xl md:text-4xl lg:text-5xl mb-4">Services</h2>
-          <p class="text-forest/70 max-w-2xl mx-auto">
+          <p class="text-brand-800/70 max-w-2xl mx-auto">
             At Hourglass Therapy, we offer flexible and accessible support tailored to your needs - choose the approach that works best for you.
           </p>
         </div>
@@ -529,16 +565,16 @@
         <!-- Services Grid - Row 1 -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           <!-- Service Card 1 - Face to Face -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/face-to-face.webp" loading="lazy" alt="Comfortable therapy room setting for face-to-face counselling sessions" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Face-to-Face Counselling</h3>
-              <p class="text-forest/70 text-sm mb-4">Share, reflect, and grow in a confidential and supportive environment at our calm, welcoming Bristol location.</p>
-              <a href="./contact.html?service=face-to-face" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book face-to-face counselling now">
-                Book Now
+              <p class="text-brand-800/70 text-sm mb-4">Share, reflect, and grow in a confidential and supportive environment at our calm, welcoming Bristol location.</p>
+              <a href="./counselling.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about face-to-face counselling">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -547,16 +583,16 @@
           </article>
 
           <!-- Service Card 2 - Telephone -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/telephone.webp" loading="lazy" alt="Person comfortably engaged in telephone counselling from home" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Telephone Counselling</h3>
-              <p class="text-forest/70 text-sm mb-4">Connect by phone for talk therapy from the comfort of your own space - perfect for those who prefer not to be seen onscreen.</p>
-              <a href="./contact.html?service=telephone" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book telephone counselling now">
-                Book Now
+              <p class="text-brand-800/70 text-sm mb-4">Connect by phone for talk therapy from the comfort of your own space - perfect for those who prefer not to be seen onscreen.</p>
+              <a href="./counselling.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about telephone counselling">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -565,16 +601,16 @@
           </article>
 
           <!-- Service Card 3 - Online/Video -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/online-video.webp" loading="lazy" alt="Woman engaged in an online video counselling session from home" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Online/Video Counselling</h3>
-              <p class="text-forest/70 text-sm mb-4">Meet virtually via Zoom or Skype. Flexible and accessible for busy lifestyles, enabling you to work on your goals wherever you are.</p>
-              <a href="./contact.html?service=online-video" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book online video counselling now">
-                Book Now
+              <p class="text-brand-800/70 text-sm mb-4">Meet virtually via Zoom or Skype. Flexible and accessible for busy lifestyles, enabling you to work on your goals wherever you are.</p>
+              <a href="./counselling.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about online video counselling">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -586,16 +622,16 @@
         <!-- Services Grid - Row 2 -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Service Card 4 - Walk & Talk -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/walk-talk.webp" loading="lazy" alt="Scenic outdoor path in Bristol area used for walk and talk therapy" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Walk & Talk Therapy</h3>
-              <p class="text-forest/70 text-sm mb-4">Experience the healing benefits of the outdoors. Walking side by side in nature can offer new perspectives and is particularly supportive for those who find traditional settings overwhelming.</p>
-              <a href="./contact.html?service=walk-talk" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book walk and talk therapy now">
-                Book Now
+              <p class="text-brand-800/70 text-sm mb-4">Experience the healing benefits of the outdoors. Walking side by side in nature can offer new perspectives and is particularly supportive for those who find traditional settings overwhelming.</p>
+              <a href="./counselling.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about walk and talk therapy">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -604,16 +640,16 @@
           </article>
 
           <!-- Service Card 5 - Couples -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/couples.webp" loading="lazy" alt="Welcoming space for couples counselling sessions" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="font-serif text-xl mb-3">Couples Counselling</h3>
-              <p class="text-forest/70 text-sm mb-4">Every relationship faces challenges. Together, we'll build communication, understanding, and stronger bonds in a warm, neutral setting.</p>
-              <a href="./contact.html?service=couples" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book couples counselling now">
-                Book Now
+              <h3 class="font-serif text-xl mb-3"><a href="./couples-counselling.html" class="hover:text-brand-700 transition-colors">Couples Counselling</a></h3>
+              <p class="text-brand-800/70 text-sm mb-4">Every relationship faces challenges. Together, we'll build communication, understanding, and stronger bonds in a warm, neutral setting.</p>
+              <a href="./counselling.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about couples counselling">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -621,17 +657,35 @@
             </div>
           </article>
 
-          <!-- Service Card 6 - Supervision -->
-          <article class="bg-cream-50 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+          <!-- Service Card 6 - Hypnotherapy -->
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+            <div class="relative h-80">
+              <img src="images/hypnotherapy.webp" loading="lazy" alt="Hypnotherapist gently guiding a relaxed client reclining in an armchair during a session" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="font-serif text-xl mb-3"><a href="./hypnotherapy.html" class="hover:text-brand-700 transition-colors">Hypnotherapy</a></h3>
+              <p class="text-brand-800/70 text-sm mb-4">A gentle and effective way to access the subconscious and facilitate positive change. Can help with anxiety, phobias, confidence, sleep issues, and smoking cessation.</p>
+              <a href="./hypnotherapy.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about hypnotherapy">
+                Learn more
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Service Card 7 - Supervision -->
+          <article class="bg-brand-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
             <div class="relative h-80">
               <img src="images/supervision.webp" loading="lazy" alt="Professional online supervision session with therapist taking notes" class="w-full h-full object-cover">
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="font-serif text-xl mb-3">Supervision</h3>
-              <p class="text-forest/70 text-sm mb-4">Provide ethical, reflective support to your practice. I offer confidential supervision for trainee and qualified counsellors, tailored to enhance your skills, wellbeing, and professional growth.</p>
-              <a href="./contact.html?service=supervision" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="Book supervision now">
-                Book Now
+              <p class="text-brand-800/70 text-sm mb-4">Provide ethical, reflective support to your practice. I offer confidential supervision for trainee and qualified counsellors, tailored to enhance your skills, wellbeing, and professional growth.</p>
+              <a href="./supervision.html" class="inline-flex items-center justify-center gap-2 w-full bg-accent text-white px-6 py-3 rounded-lg text-sm hover:bg-accent/90 transition-colors mt-auto" aria-label="More information about supervision">
+                Learn more
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>
@@ -642,11 +696,11 @@
       </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="relative py-20 px-6" aria-labelledby="newsletter-heading">
+    <!-- Contact CTA Section -->
+    <section class="relative py-20 px-6" aria-labelledby="contact-cta-heading">
       <!-- Background -->
       <div class="absolute inset-0">
-        <img src="images/newsletter-bg.png" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="lazy">
+        <img src="images/contact-cta-bg.webp" alt="" class="w-full h-full object-cover object-top" aria-hidden="true" loading="lazy">
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -654,37 +708,21 @@
         <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
           <!-- Left Content -->
           <div class="text-white">
-            <h2 id="newsletter-heading" class="font-serif text-3xl md:text-4xl mb-4 italic">Let's take the next step together.</h2>
-            <p class="text-white/80">Stay connected with our monthly newsletter for wellbeing tips and therapy insights.</p>
+            <h2 id="contact-cta-heading" class="font-serif text-3xl md:text-4xl mb-4 italic">Let's take the next step together.</h2>
+            <p class="text-white/80">Reaching out can feel like a big step. There's no pressure and no obligation: just a friendly, confidential conversation about what's going on for you and how I might help.</p>
           </div>
 
-          <!-- Right Form -->
-          <div class="bg-accent p-8 rounded-lg">
-            <form class="space-y-4" aria-label="Newsletter signup form">
-              <div>
-                <label for="newsletter-email" class="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  id="newsletter-email"
-                  name="email"
-                  placeholder="Email Address"
-                  required
-                  aria-required="true"
-                  autocomplete="email"
-                  class="w-full px-4 py-3 rounded-lg text-forest bg-white focus:outline-none focus:ring-2 focus:ring-accent"
-                >
-              </div>
-              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-cream-100 text-forest px-6 py-3 rounded-lg hover:bg-cream-200 transition-colors font-medium">
-                Subscribe
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-              </button>
-              <label class="flex items-center gap-2 text-white/80 text-sm cursor-pointer">
-                <input type="checkbox" class="w-4 h-4 rounded border-white/30 bg-transparent text-accent focus:ring-accent">
-                <span>No Spam, Only Genuine Updates</span>
-              </label>
-            </form>
+          <!-- Right Card -->
+          <div class="bg-accent p-6 rounded-lg text-white max-w-sm w-full md:justify-self-end md:mt-16">
+            <h3 class="font-playfair text-xl mb-2">Get in touch</h3>
+            <p class="text-white/85 text-sm mb-5">Send us a message, and we'll get back to you.</p>
+            <a href="./contact.html" class="w-full inline-flex items-center justify-center gap-2 bg-brand-200 text-brand-800 px-5 py-2.5 rounded-lg hover:bg-brand-300 transition-colors font-medium">
+              Contact Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+            <p class="mt-3 text-xs text-white/80">Or email <a href="mailto:hello@hourglasstherapy.co.uk" class="underline hover:text-white">hello@hourglasstherapy.co.uk</a></p>
           </div>
         </div>
       </div>
@@ -692,7 +730,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-navy text-white py-16 px-6" role="contentinfo">
+  <footer class="bg-brand-900 text-white py-16 px-6" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <!-- Top Section -->
       <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/10 pb-8 mb-8">
@@ -728,23 +766,23 @@
           <ul class="space-y-2 text-sm text-white/60">
             <li><a href="./#services" class="hover:text-white transition-colors">Our Services</a></li>
             <li><a href="./#about" class="hover:text-white transition-colors">About</a></li>
-            <li><a href="./contact.html#faq" class="hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="./contact.html" class="hover:text-white transition-colors">FAQ</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">About</h3>
           <ul class="space-y-2 text-sm text-white/60">
             <li><a href="./about.html" class="hover:text-white transition-colors">Meet Caroline</a></li>
-            <li><a href="./about.html#our-mission" class="hover:text-white transition-colors">Professional Associations</a></li>
-            <li><a href="./about.html#experience" class="hover:text-white transition-colors">Experience</a></li>
+            <li><a href="./about.html" class="hover:text-white transition-colors">Professional Associations</a></li>
+            <li><a href="./about.html" class="hover:text-white transition-colors">Experience</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">Services</h3>
           <ul class="space-y-2 text-sm text-white/60">
-            <li><a href="./services.html#face-to-face" class="hover:text-white transition-colors">Face-to-Face</a></li>
-            <li><a href="./services.html#telephone" class="hover:text-white transition-colors">Telephone</a></li>
-            <li><a href="./services.html#walk-talk" class="hover:text-white transition-colors">Walk & Talk</a></li>
+            <li><a href="./services.html" class="hover:text-white transition-colors">Face-to-Face</a></li>
+            <li><a href="./services.html" class="hover:text-white transition-colors">Telephone</a></li>
+            <li><a href="./services.html" class="hover:text-white transition-colors">Walk & Talk</a></li>
           </ul>
         </div>
         <div>
