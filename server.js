@@ -93,29 +93,52 @@ ${message}
 
     // Send confirmation email to the user
     const confirmationOptions = {
-      from: `"Hourglass Therapy" <${process.env.SMTP_USER}>`,
+      from: `"Caroline at Hourglass Therapy" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: 'Thank you for contacting Hourglass Therapy',
+      replyTo: process.env.CONTACT_EMAIL || 'hello@hourglasstherapy.co.uk',
+      subject: 'Thank you for reaching out, ' + name.split(' ')[0],
       html: `
-        <h2>Thank you for getting in touch, ${name}!</h2>
-        <p>We have received your message and will get back to you as soon as possible.</p>
-        <p>In the meantime, if you have any urgent queries, please don't hesitate to email us directly at <a href="mailto:hello@hourglasstherapy.co.uk">hello@hourglasstherapy.co.uk</a>.</p>
-        <br>
-        <p>Warm regards,</p>
-        <p><strong>Hourglass Therapy</strong></p>
-        <p>Taking Time for You</p>
+        <div style="margin:0;padding:24px;background-color:#d3e5f2;font-family:Georgia,'Times New Roman',serif;">
+          <div style="max-width:560px;margin:0 auto;background-color:#ffffff;border-radius:16px;padding:40px 32px;color:#2f4a58;">
+            <p style="margin:0 0 24px;font-size:22px;line-height:1.4;color:#2f4a58;">Hello ${name.split(' ')[0]},</p>
+
+            <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">Thank you for getting in touch. Reaching out is often the hardest part, and I am really glad you have.</p>
+
+            <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.</p>
+
+
+            <p style="margin:0 0 28px;font-size:16px;line-height:1.7;">In the meantime, take good care of yourself.</p>
+
+            <p style="margin:0 0 4px;font-size:16px;line-height:1.7;">Warm wishes,</p>
+            <p style="margin:0 0 2px;font-size:20px;color:#5a8298;">Caroline</p>
+            <p style="margin:0 0 28px;font-size:14px;color:#5a8298;">Hourglass Therapy<br>Taking Time for You</p>
+
+            <div style="border-top:1px solid #d3e5f2;padding-top:20px;">
+              <p style="margin:0 0 10px;font-size:14px;line-height:1.6;color:#4a6b7d;"><strong>If you need support before I reply</strong></p>
+              <p style="margin:0;font-size:14px;line-height:1.6;color:#4a6b7d;">This inbox is not monitored around the clock. If things feel urgent, please contact your GP, call NHS 111, or speak to the Samaritans free on <strong>116 123</strong>, any time of day or night. In an emergency, please call 999.</p>
+            </div>
+          </div>
+
+          <p style="max-width:560px;margin:16px auto 0;font-size:12px;line-height:1.6;color:#4a6b7d;text-align:center;font-family:Arial,sans-serif;">You are receiving this because you contacted Hourglass Therapy through hourglasstherapy.co.uk. Just reply to this email if you need anything.</p>
+        </div>
       `,
-      text: `
-Thank you for getting in touch, ${name}!
+      text: `Hello ${name.split(' ')[0]},
 
-We have received your message and will get back to you as soon as possible.
+Thank you for getting in touch. Reaching out is often the hardest part, and I am really glad you have.
 
-In the meantime, if you have any urgent queries, please don't hesitate to email us directly at hello@hourglasstherapy.co.uk.
+Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.
 
-Warm regards,
+In the meantime, take good care of yourself.
+
+Warm wishes,
+Caroline
 Hourglass Therapy
 Taking Time for You
-      `,
+
+If you need support before I reply
+This inbox is not monitored around the clock. If things feel urgent, please contact your GP, call NHS 111, or speak to the Samaritans free on 116 123, any time of day or night. In an emergency, please call 999.
+
+You are receiving this because you contacted Hourglass Therapy through hourglasstherapy.co.uk. Just reply to this email if you need anything.`,
     };
 
     await transporter.sendMail(confirmationOptions);
