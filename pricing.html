@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // Always start new page loads at the top: no scroll restoration on reload/back
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.addEventListener('pageshow', function () { window.scrollTo(0, 0); });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Therapy Pricing - Hourglass Therapy | Affordable Counselling in Bristol</title>
@@ -74,8 +79,24 @@
         {
           "@type": "Offer",
           "name": "Couples Counselling",
-          "description": "90-minute relationship therapy session for couples",
+          "description": "60-minute relationship therapy session for couples",
           "price": "85.00",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Clinical Supervision - Qualified Counsellors",
+          "description": "60-minute supervision session for qualified counsellors, in Bristol or online",
+          "price": "60.00",
+          "priceCurrency": "GBP",
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Clinical Supervision - Trainee Counsellors",
+          "description": "60-minute supervision session for trainee counsellors, in Bristol or online",
+          "price": "45.00",
           "priceCurrency": "GBP",
           "availability": "https://schema.org/InStock"
         }
@@ -118,15 +139,36 @@
       theme: {
         extend: {
           colors: {
-            cream: {
-              50: '#fff8f0',
-              100: '#F5F0E8',
-              200: '#eee4d7',
-              300: '#e8dbc9',
+            // Hourglass brand palette (see claude.md). 700-900 are derived deeper slates.
+            brand: {
+              50: '#f7f7f7',
+              100: '#eef7fd',
+              200: '#d3e5f2',
+              300: '#c0ddf4',
+              400: '#94b4c8',
+              500: '#85a8bd',
+              600: '#5a8298',
+              700: '#4a6b7d',
+              800: '#2f4a58',
+              900: '#21353f',
             },
-            forest: '#31372f',
-            navy: '#1a1f2e',
-            accent: '#237cad',
+            sand: {
+              50: '#f5f5f0',
+              100: '#ede7d6',
+            },
+            mist: {
+              100: '#e7edeb',
+              200: '#b6c2c3',
+            },
+            'brand-sky': {
+              100: '#badff8',
+              200: '#b6d9f6',
+            },
+            slate: {
+              muted: '#63808d',
+              deep: '#5a8399',
+            },
+            accent: '#5a8298',
           },
           fontFamily: {
             serif: ['DM Serif Display', 'serif'],
@@ -139,15 +181,15 @@
   </script>
   <style>
     body {
-      background-color: #F5F0E8;
+      background-color: #d3e5f2;
     }
     /* Accessibility: Skip link styles */
     .skip-link {
       position: absolute;
       top: -40px;
       left: 0;
-      background: #31372f;
-      color: #F5F0E8;
+      background: #2f4a58;
+      color: #f5f5f0;
       padding: 8px 16px;
       z-index: 100;
       text-decoration: none;
@@ -163,16 +205,16 @@
     textarea:focus-visible,
     select:focus-visible,
     [tabindex]:focus-visible {
-      outline: 3px solid #237cad;
+      outline: 3px solid #5a8298;
       outline-offset: 2px;
     }
     a:focus,
     button:focus {
-      outline: 3px solid #237cad;
+      outline: 3px solid #5a8298;
       outline-offset: 2px;
     }
     nav a:focus {
-      outline: 2px solid #237cad;
+      outline: 2px solid #5a8298;
       outline-offset: 4px;
       border-radius: 4px;
     }
@@ -204,12 +246,12 @@
     }
   </style>
 </head>
-<body class="font-sans text-forest antialiased">
+<body class="font-sans text-brand-800 antialiased">
   <!-- Skip Navigation Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream-100 px-6 py-4" role="navigation" aria-label="Main navigation">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-200 px-6 py-4" role="navigation" aria-label="Main navigation">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Logo -->
       <a href="./" aria-label="Hourglass Therapy - Home">
@@ -217,30 +259,33 @@
       </a>
 
       <!-- Mobile menu button -->
-      <button class="md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <button id="menu-toggle" type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 rounded-lg text-brand-800 hover:bg-brand-300 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+        <svg data-menu-icon="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg data-menu-icon="close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
 
       <!-- Desktop Navigation -->
-      <div id="mobile-menu" class="hidden md:flex items-center gap-8" role="menubar">
-        <a href="./" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">Home</a>
-        <a href="./about.html" class="text-forest/70 hover:text-forest transition-colors" role="menuitem">About</a>
-        <a href="./pricing.html" class="text-forest border-b-2 border-forest pb-0.5" role="menuitem" aria-current="page">Pricing</a>
+      <div class="hidden md:flex items-center gap-8" role="menubar">
+        <a href="./" class="text-brand-800/70 hover:text-brand-800 transition-colors" role="menuitem">Home</a>
+        <a href="./about.html" class="text-brand-800/70 hover:text-brand-800 transition-colors" role="menuitem">About</a>
+        <a href="./pricing.html" class="text-brand-800 border-b-2 border-brand-800 pb-0.5" role="menuitem" aria-current="page">Pricing</a>
         <div class="relative dropdown" role="menuitem">
-          <a href="./services.html" class="text-forest/70 hover:text-forest transition-colors inline-flex items-center gap-1">
+          <a href="./services.html" class="text-brand-800/70 hover:text-brand-800 transition-colors inline-flex items-center gap-1">
             Services
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </a>
           <div class="dropdown-menu hidden absolute top-full left-0 pt-2">
-            <div class="bg-cream-50 rounded-lg shadow-lg border border-cream-200 py-2 min-w-[160px] sm:min-w-[200px]">
-              <a href="./counselling.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Counselling</a>
-              <a href="./hypnotherapy.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Hypnotherapy</a>
-              <a href="./eating-disorders.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Eating Disorders</a>
-              <a href="./supervision.html" class="block px-4 py-2 text-sm text-forest/70 hover:text-forest hover:bg-cream-100 transition-colors">Supervision</a>
+            <div class="bg-brand-100 rounded-lg shadow-lg border border-brand-300 py-2 min-w-[160px] sm:min-w-[200px]">
+              <a href="./counselling.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Counselling</a>
+              <a href="./couples-counselling.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Couples Counselling</a>
+              <a href="./eating-disorders.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Eating Disorders</a>
+              <a href="./supervision.html" class="block px-4 py-2 text-sm text-brand-800/70 hover:text-brand-800 hover:bg-brand-200 transition-colors">Supervision</a>
             </div>
           </div>
         </div>
@@ -254,34 +299,106 @@
         </a>
       </div>
     </div>
+
+      <!-- Mobile Navigation Panel -->
+      <div id="mobile-menu" class="md:hidden hidden max-w-7xl mx-auto mt-4 pt-4 border-t border-brand-300 max-h-[calc(100vh-7.5rem)] overflow-y-auto overscroll-contain">
+        <div class="flex flex-col gap-1 pb-2">
+          <a href="./" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Home</a>
+          <a href="./about.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">About</a>
+          <a href="./pricing.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Pricing</a>
+
+          <p class="px-4 pt-4 pb-1 text-xs font-semibold uppercase tracking-wider text-brand-800/50">Services</p>
+          <a href="./services.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">All Services</a>
+          <a href="./counselling.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Counselling</a>
+          <a href="./couples-counselling.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Couples Counselling</a>
+          <a href="./eating-disorders.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Eating Disorders</a>
+          <a href="./supervision.html" class="block rounded-lg px-4 py-3 text-base text-brand-800/80 hover:bg-brand-100 hover:text-brand-800 transition-colors">Supervision</a>
+
+          <a href="./contact.html" class="mt-4 mb-2 inline-flex items-center justify-center gap-2 bg-accent text-white px-5 py-3 rounded-lg hover:bg-accent/90 transition-colors font-medium">
+            Contact Us
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
   </nav>
+  <script>
+    // Mobile navigation: toggle, icon swap, current-page marker
+    (function () {
+      var btn = document.getElementById('menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      var iconOpen = btn.querySelector('[data-menu-icon="open"]');
+      var iconClose = btn.querySelector('[data-menu-icon="close"]');
+
+      function setOpen(isOpen) {
+        menu.classList.toggle('hidden', !isOpen);
+        iconOpen.classList.toggle('hidden', isOpen);
+        iconClose.classList.toggle('hidden', !isOpen);
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        btn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      }
+
+      btn.addEventListener('click', function () {
+        setOpen(menu.classList.contains('hidden'));
+      });
+
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) {
+          setOpen(false);
+          btn.focus();
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) setOpen(false);
+      });
+
+      function normalise(path) {
+        return path.replace(/^\.\//, '/').replace(/index\.html$/, '').replace(/\/$/, '');
+      }
+      var here = normalise(location.pathname);
+      Array.prototype.forEach.call(menu.querySelectorAll('a[href]'), function (a) {
+        if (normalise(a.getAttribute('href')) === here) {
+          a.setAttribute('aria-current', 'page');
+          a.className = a.className.replace('text-brand-800/80', 'text-brand-800 font-medium bg-brand-100');
+        }
+      });
+    })();
+  </script>
+
 
   <main id="main-content">
     <!-- Pricing Section -->
-    <section class="pt-32 pb-20 px-6 bg-cream-50" aria-labelledby="page-heading">
+    <section class="pt-32 pb-20 px-6 bg-brand-100" aria-labelledby="page-heading">
       <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-16">
           <!-- Pill/Badge -->
-          <span class="inline-block bg-cream-200 text-forest text-sm font-medium px-4 py-1.5 rounded-lg mb-6">Our Pricing</span>
+          <span class="inline-block bg-brand-300 text-brand-800 text-sm font-medium px-4 py-1.5 rounded-lg mb-6">Our Pricing</span>
 
           <!-- Main Heading -->
           <h1 id="page-heading" class="font-serif text-3xl md:text-5xl lg:text-6xl mb-6">An Investment in You</h1>
 
           <!-- Subtitle -->
-          <p class="text-forest/70 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p class="text-brand-800/70 max-w-2xl mx-auto text-lg leading-relaxed">
             Your wellbeing matters most – our fees are simple, transparent, and designed to keep therapy accessible without adding extra worry.
           </p>
         </div>
 
         <!-- Pricing Cards Grid - 4 columns -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <!-- Face to Face -->
-          <article class="bg-white/80 border border-cream-200 rounded-2xl p-6 flex flex-col">
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
             <div class="flex-grow">
               <h3 class="font-serif text-xl mb-2">Face to Face</h3>
-              <p class="text-forest/60 text-sm mb-6">50 Minute Session</p>
+              <p class="text-brand-800/60 text-sm mb-6">50 Minute Session</p>
               <p class="font-serif text-4xl md:text-5xl mb-6">£60</p>
             </div>
             <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
@@ -293,10 +410,10 @@
           </article>
 
           <!-- Telephone/Online -->
-          <article class="bg-white/80 border border-cream-200 rounded-2xl p-6 flex flex-col">
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
             <div class="flex-grow">
               <h3 class="font-serif text-xl mb-2">Telephone/Online</h3>
-              <p class="text-forest/60 text-sm mb-6">50 Minute Session</p>
+              <p class="text-brand-800/60 text-sm mb-6">50 Minute Session</p>
               <p class="font-serif text-4xl md:text-5xl mb-6">£60</p>
             </div>
             <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
@@ -308,10 +425,10 @@
           </article>
 
           <!-- Walk and Talk -->
-          <article class="bg-white/80 border border-cream-200 rounded-2xl p-6 flex flex-col">
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
             <div class="flex-grow">
               <h3 class="font-serif text-xl mb-2">Walk and Talk</h3>
-              <p class="text-forest/60 text-sm mb-6">50 Minute Session</p>
+              <p class="text-brand-800/60 text-sm mb-6">50 Minute Session</p>
               <p class="font-serif text-4xl md:text-5xl mb-6">£60</p>
             </div>
             <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
@@ -323,11 +440,41 @@
           </article>
 
           <!-- Couples -->
-          <article class="bg-white/80 border border-cream-200 rounded-2xl p-6 flex flex-col">
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
             <div class="flex-grow">
               <h3 class="font-serif text-xl mb-2">Couples</h3>
-              <p class="text-forest/60 text-sm mb-6">90 Minute Session</p>
+              <p class="text-brand-800/60 text-sm mb-6">60 Minute Session</p>
               <p class="font-serif text-4xl md:text-5xl mb-6">£85</p>
+            </div>
+            <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
+              Contact Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Supervision: Qualified -->
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
+            <div class="flex-grow">
+              <h3 class="font-serif text-xl mb-2">Supervision (Qualified)</h3>
+              <p class="text-brand-800/60 text-sm mb-6">60 Minute Session</p>
+              <p class="font-serif text-4xl md:text-5xl mb-6">£60</p>
+            </div>
+            <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
+              Contact Us
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Supervision: Trainee -->
+          <article class="bg-white/80 border border-brand-300 rounded-2xl p-6 flex flex-col">
+            <div class="flex-grow">
+              <h3 class="font-serif text-xl mb-2">Supervision (Trainee)</h3>
+              <p class="text-brand-800/60 text-sm mb-6">60 Minute Session</p>
+              <p class="font-serif text-4xl md:text-5xl mb-6">£45</p>
             </div>
             <a href="./contact.html" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors w-full text-center">
               Contact Us
@@ -343,30 +490,30 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-navy text-cream-50 py-16 px-6" role="contentinfo">
+  <footer class="bg-brand-900 text-sand-50 py-16 px-6" role="contentinfo">
     <div class="max-w-7xl mx-auto">
       <!-- Top Section -->
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-cream-50/20 pb-8 mb-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-sand-50/20 pb-8 mb-8">
         <div class="mb-6 md:mb-0">
           <div class="mb-2">
             <a href="./" aria-label="Hourglass Therapy - Home">
               <img src="images/logo-light.png" alt="Hourglass Therapy logo" class="h-14">
             </a>
           </div>
-          <p class="text-cream-100/70 text-sm">Taking Time for You</p>
+          <p class="text-sand-100/70 text-sm">Taking Time for You</p>
         </div>
         <nav class="flex gap-4" aria-label="Social media links">
-          <a href="https://www.linkedin.com/in/caroline-griffiths-748163a3/" class="w-10 h-10 bg-cream-50/10 rounded-lg flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on LinkedIn (opens in new tab)" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/caroline-griffiths-748163a3/" class="w-10 h-10 bg-sand-50/10 rounded-lg flex items-center justify-center hover:bg-sand-50/20 transition-colors" aria-label="Follow us on LinkedIn (opens in new tab)" target="_blank" rel="noopener noreferrer">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
             </svg>
           </a>
-          <a href="https://www.facebook.com/watch/?v=299161718739268" class="w-10 h-10 bg-cream-50/10 rounded-lg flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on Facebook (opens in new tab)" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/watch/?v=299161718739268" class="w-10 h-10 bg-sand-50/10 rounded-lg flex items-center justify-center hover:bg-sand-50/20 transition-colors" aria-label="Follow us on Facebook (opens in new tab)" target="_blank" rel="noopener noreferrer">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
             </svg>
           </a>
-          <a href="https://www.instagram.com/hourglasstherapy/" class="w-10 h-10 bg-cream-50/10 rounded-lg flex items-center justify-center hover:bg-cream-50/20 transition-colors" aria-label="Follow us on Instagram (opens in new tab)" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/hourglasstherapy/" class="w-10 h-10 bg-sand-50/10 rounded-lg flex items-center justify-center hover:bg-sand-50/20 transition-colors" aria-label="Follow us on Instagram (opens in new tab)" target="_blank" rel="noopener noreferrer">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
@@ -378,41 +525,40 @@
       <nav class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8" aria-label="Footer navigation">
         <div>
           <h3 class="font-medium mb-4">Home Page</h3>
-          <ul class="space-y-2 text-sm text-cream-100/70">
-            <li><a href="./#services" class="hover:text-cream-50 transition-colors">Our Services</a></li>
-            <li><a href="./#about" class="hover:text-cream-50 transition-colors">About</a></li>
-            <li><a href="./contact.html#faq" class="hover:text-cream-50 transition-colors">FAQ</a></li>
+          <ul class="space-y-2 text-sm text-sand-100/70">
+            <li><a href="./" class="hover:text-sand-50 transition-colors">Our Services</a></li>
+            <li><a href="./" class="hover:text-sand-50 transition-colors">About</a></li>
+            <li><a href="./contact.html" class="hover:text-sand-50 transition-colors">FAQ</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">About</h3>
-          <ul class="space-y-2 text-sm text-cream-100/70">
-            <li><a href="./about.html" class="hover:text-cream-50 transition-colors">Meet Caroline</a></li>
-            <li><a href="./about.html#our-mission" class="hover:text-cream-50 transition-colors">Our Mission</a></li>
-            <li><a href="./about.html#experience" class="hover:text-cream-50 transition-colors">Experience</a></li>
+          <ul class="space-y-2 text-sm text-sand-100/70">
+            <li><a href="./about.html" class="hover:text-sand-50 transition-colors">Meet Caroline</a></li>
+            <li><a href="./about.html" class="hover:text-sand-50 transition-colors">Our Mission</a></li>
+            <li><a href="./about.html" class="hover:text-sand-50 transition-colors">Experience</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">Services</h3>
-          <ul class="space-y-2 text-sm text-cream-100/70">
-            <li><a href="./services.html#face-to-face" class="hover:text-cream-50 transition-colors">Face-to-Face</a></li>
-            <li><a href="./services.html#telephone" class="hover:text-cream-50 transition-colors">Telephone</a></li>
-            <li><a href="./services.html#walk-talk" class="hover:text-cream-50 transition-colors">Walk & Talk</a></li>
+          <ul class="space-y-2 text-sm text-sand-100/70">
+            <li><a href="./counselling.html" class="hover:text-sand-50 transition-colors">Counselling</a></li>
+            <li><a href="./couples-counselling.html" class="hover:text-sand-50 transition-colors">Couples Counselling</a></li>
+            <li><a href="./eating-disorders.html" class="hover:text-sand-50 transition-colors">Eating Disorders</a></li>
+            <li><a href="./supervision.html" class="hover:text-sand-50 transition-colors">Supervision</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">Specialisms</h3>
-          <ul class="space-y-2 text-sm text-cream-100/70">
-            <li><a href="./supervision.html" class="hover:text-cream-50 transition-colors">Supervision</a></li>
-            <li><a href="./hypnotherapy.html" class="hover:text-cream-50 transition-colors">Hypnotherapy</a></li>
-            <li><a href="./eating-disorders.html" class="hover:text-cream-50 transition-colors">Eating Disorders</a></li>
+          <ul class="space-y-2 text-sm text-sand-100/70">
+            <li><a href="./eating-disorders.html" class="hover:text-sand-50 transition-colors">Eating Disorders</a></li>
           </ul>
         </div>
         <div>
           <h3 class="font-medium mb-4">Contact</h3>
-          <ul class="space-y-3 text-sm text-cream-100/70">
+          <ul class="space-y-3 text-sm text-sand-100/70">
             <li>
-              <a href="mailto:hello@hourglasstherapy.co.uk" class="flex items-center gap-2 hover:text-cream-50 transition-colors">
+              <a href="mailto:hello@hourglasstherapy.co.uk" class="flex items-center gap-2 hover:text-sand-50 transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                 </svg>
@@ -424,7 +570,7 @@
       </nav>
 
       <!-- Copyright -->
-      <div class="text-center text-sm text-cream-100/50 pt-8 border-t border-cream-50/20">
+      <div class="text-center text-sm text-sand-100/50 pt-8 border-t border-sand-50/20">
         <p class="mb-2">Hourglass Therapy | Caroline – Counselling & Psychotherapy in Bristol, Nationwide Online</p>
         <p class="mb-2">Registered with the National Counselling & Psychotherapy Society</p>
         <p>&copy; 2026 Hourglass Therapy Ltd. All rights reserved.</p>

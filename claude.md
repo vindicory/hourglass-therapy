@@ -22,21 +22,37 @@ npm install
 # Start the server
 node server.js
 
-# Access at http://100.95.191.86:8092/
+# Access at http://100.69.78.93:18080/ (Tailscale)
 ```
 
 ## Design System
 
 ### Color Palette
 
+Source of truth: the Hourglass Therapy brand colours supplied 2026-08-27 (three swatch groups). Tokens live in each page's Tailwind config.
+
 | Name | Hex | Tailwind Class | Usage |
 |------|-----|----------------|-------|
-| Cream 50 | `#fff8f0` | `cream-50` | Page background, light sections |
-| Cream 100 | `#f3ece2` | `cream-100` | Card backgrounds, subtle contrast |
-| Cream 200 | `#eee4d7` | `cream-200` | Badges, secondary cards |
-| Cream 300 | `#e8dbc9` | `cream-300` | Borders, deeper accents |
-| Forest | `#31372f` | `forest` | Primary text, dark backgrounds (footer) |
-| Accent Blue | `#237cad` | `accent` | CTAs, links, highlights |
+| Brand 50 | `#f7f7f7` | `brand-50` | Neutral off-white (available, unused) |
+| Brand 100 | `#eef7fd` | `brand-100` | Lighter sections, cards on base-blue sections |
+| Brand 200 | `#d3e5f2` | `brand-200` | Page background, header, base sections, dropdown hover |
+| Brand 300 | `#c0ddf4` | `brand-300` | Badges, secondary cards, card borders |
+| Brand 400 | `#94b4c8` | `brand-400` | Mid blue-grey (available) |
+| Brand 500 | `#85a8bd` | `brand-500` | Logo mid blue (available) |
+| Brand 600 | `#5a8298` | `brand-600` / `accent` | CTAs, buttons, tinted backgrounds (`bg-accent/10`), focus rings |
+| Brand 700 | `#4a6b7d` | `brand-700` | Link and label text (derived: darker than 600 for contrast) |
+| Brand 800 | `#2f4a58` | `brand-800` | Primary text, dark sections (derived from 600) |
+| Brand 900 | `#21353f` | `brand-900` | Footer background (derived from 600) |
+| Sand 50 | `#f5f5f0` | `sand-50` | Light text and translucent overlays on dark backgrounds |
+| Sand 100 | `#ede7d6` | `sand-100` | Muted text on dark backgrounds (footer) |
+| Mist 100 | `#e7edeb` | `mist-100` | Pale grey-green (available) |
+| Mist 200 | `#b6c2c3` | `mist-200` | Stone grey (available) |
+| Brand Sky 100 | `#badff8` | `brand-sky-100` | Light blue (available) |
+| Brand Sky 200 | `#b6d9f6` | `brand-sky-200` | Light blue (available) |
+| Slate Muted | `#63808d` | `slate-muted` | Muted slate (available) |
+| Slate Deep | `#5a8399` | `slate-deep` | Slate blue (available) |
+
+Brand 700-900 are not in the supplied swatches; they are darkened tints of `#5a8298` added because the brand set has no colour dark enough for body text.
 
 ### Typography
 
@@ -59,12 +75,12 @@ node server.js
 
 Primary (dark):
 ```html
-<a class="inline-flex items-center gap-2 bg-forest text-cream-50 px-6 py-3 rounded-full hover:bg-forest/90 transition-colors">
+<a class="inline-flex items-center gap-2 bg-brand-800 text-sand-50 px-6 py-3 rounded-full hover:bg-brand-800/90 transition-colors">
 ```
 
 Secondary (outline):
 ```html
-<a class="inline-flex items-center gap-2 border border-forest px-6 py-3 rounded-full hover:bg-forest hover:text-cream-50 transition-colors">
+<a class="inline-flex items-center gap-2 border border-brand-800 px-6 py-3 rounded-full hover:bg-brand-800 hover:text-sand-50 transition-colors">
 ```
 
 Accent (blue):
@@ -76,7 +92,7 @@ Accent (blue):
 
 Service cards have image + content layout:
 ```html
-<div class="bg-cream-50 rounded-3xl overflow-hidden">
+<div class="bg-brand-100 rounded-3xl overflow-hidden">
   <img class="w-full h-56 object-cover">
   <div class="p-6">
     <!-- content -->
@@ -87,7 +103,7 @@ Service cards have image + content layout:
 #### Badges/Tags
 
 ```html
-<span class="inline-flex items-center gap-2 bg-cream-200 px-4 py-2 rounded-full text-sm">
+<span class="inline-flex items-center gap-2 bg-brand-300 px-4 py-2 rounded-full text-sm">
   <svg><!-- checkmark --></svg>
   Label
 </span>
@@ -98,6 +114,7 @@ Service cards have image + content layout:
 ```
 hourglass-therapy/
 ├── index.html          # Main homepage
+├── couples-counselling.html  # Couples counselling service page (same layout as supervision.html)
 ├── server.js           # Express static server
 ├── package.json        # Node dependencies
 ├── claude.md           # This file
@@ -109,7 +126,7 @@ hourglass-therapy/
     ├── telephone.webp
     ├── walk-talk.webp
     ├── couples.webp
-    ├── newsletter-bg.png
+    ├── contact-cta-bg.webp
     └── hero-bg.png
 ```
 
@@ -123,8 +140,8 @@ hourglass-therapy/
 ### 2. Hero Section
 - Large serif heading "Taking Time for You"
 - Subtitle describing the practice
-- Two CTAs: "Join Us Today" (primary) and "Book Now" (secondary)
-- Gradient background (cream tones)
+- No buttons (hero CTAs removed 2026-08-27)
+- Background video (hourglass with blue sand) with dark overlay
 
 ### 3. Feature Cards
 - 2x2 grid of cards
@@ -144,13 +161,13 @@ hourglass-therapy/
 - Each card: image, title, description, "Book Now" CTA
 - Services: Face-to-Face, Telephone, Walk & Talk, Couples Counselling
 
-### 6. Newsletter CTA
-- Full-width background image with dark overlay
-- Centered content with email signup form
-- "No Spam" reassurance message
+### 6. Contact CTA
+- Full-width Clifton Suspension Bridge at dusk (`images/contact-cta-bg.webp`, wordmark cropped off, anchored top) with dark overlay
+- Left: "Let's take the next step together." heading and reassurance copy
+- Right: slate card with "Contact me" button linking to contact.html and a mailto link
 
 ### 7. Footer
-- Dark forest background
+- Dark slate background (`brand-900`)
 - Logo and tagline
 - Social links (LinkedIn, Facebook, Instagram)
 - 5-column link grid (Home, About, Services, Other, Contact)
@@ -180,8 +197,8 @@ hourglass-therapy/
 
 ## Design Notes
 
-- The design uses warm, calming colors (cream/beige tones) to create a welcoming, therapeutic feel
+- The design uses the brand palette of soft blues and slate tones to create a calm, therapeutic feel
 - Serif fonts for headings add elegance and professionalism
 - Rounded corners throughout create a soft, approachable aesthetic
 - Images feature diverse people to represent inclusive practice
-- Blue accent color provides contrast for actionable elements
+- Slate blue accent (`#5a8298`) marks actionable elements; dark slate (`#2f4a58`) carries text
