@@ -112,7 +112,7 @@ ${message}
 
             <p style="margin:0 0 4px;font-size:16px;line-height:1.7;">Warm wishes,</p>
             <p style="margin:0 0 2px;font-size:20px;color:#5a8298;">Caroline</p>
-            <p style="margin:0 0 28px;font-size:14px;color:#5a8298;">Hourglass Therapy &middot; Taking Time for You</p>
+            <p style="margin:0 0 28px;font-size:14px;color:#5a8298;">Hourglass Therapy<br>Taking Time for You</p>
 
             <div style="border-top:1px solid #d3e5f2;padding-top:20px;">
               <p style="margin:0 0 10px;font-size:14px;line-height:1.6;color:#4a6b7d;"><strong>If you need support before I reply</strong></p>
@@ -135,9 +135,9 @@ In the meantime, take good care of yourself.
 
 Warm wishes,
 Caroline
-Hourglass Therapy - Taking Time for You
+Hourglass Therapy
+Taking Time for You
 
----
 If you need support before I reply
 This inbox is not monitored around the clock. If things feel urgent, please contact your GP, call NHS 111, or speak to the Samaritans free on 116 123, any time of day or night. In an emergency, please call 999.
 
