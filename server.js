@@ -106,7 +106,7 @@ ${message}
 
             <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.</p>
 
-            <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">Anything you share with me is treated in the strictest confidence. There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.</p>
+            <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.</p>
 
             <p style="margin:0 0 28px;font-size:16px;line-height:1.7;">In the meantime, take good care of yourself.</p>
 
@@ -129,7 +129,7 @@ Thank you for getting in touch. Reaching out is often the hardest part, and I am
 
 Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.
 
-Anything you share with me is treated in the strictest confidence. There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.
+There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.
 
 In the meantime, take good care of yourself.
 
