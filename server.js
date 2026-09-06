@@ -106,7 +106,6 @@ ${message}
 
             <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.</p>
 
-            <p style="margin:0 0 20px;font-size:16px;line-height:1.7;">There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.</p>
 
             <p style="margin:0 0 28px;font-size:16px;line-height:1.7;">In the meantime, take good care of yourself.</p>
 
@@ -128,8 +127,6 @@ ${message}
 Thank you for getting in touch. Reaching out is often the hardest part, and I am really glad you have.
 
 Your message has come through safely and I will read it myself. I aim to reply personally within two working days, so please do keep an eye on your inbox, and your junk folder just in case.
-
-There is no pressure and no obligation at this stage, and you are welcome to ask me anything before deciding whether to book.
 
 In the meantime, take good care of yourself.
 
